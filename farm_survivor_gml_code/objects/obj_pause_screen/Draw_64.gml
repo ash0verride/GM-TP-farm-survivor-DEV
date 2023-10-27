@@ -10,11 +10,8 @@ draw_rectangle(0, 0, 1920, 1080, 0);
 draw_set_colour(c_white);
 draw_set_alpha(1);
 
-// Draw the backdrop.
-draw_sprite(spr_ui_home_screen, 0, 1920 / 2, 1080 / 2);
-
 // Draw game over banner.
-draw_sprite(spr_game_over_banner, 0, 1920 / 2, 1080 / 2 - 200);
+draw_sprite(spr_game_over_banner, 0, 1920 / 2, 1080 / 2 - 100);
 
 // Set font.
 draw_set_font(fnt_large);
@@ -23,5 +20,5 @@ draw_set_font(fnt_large);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 
-// Draw game over text.
-draw_text(1920 / 2, 1080 / 2 - 200, string("PAUSED") + "");
+// Draw pause text.
+draw_text(1920 / 2, 1080 / 2 - 100, string("PAUSED"));

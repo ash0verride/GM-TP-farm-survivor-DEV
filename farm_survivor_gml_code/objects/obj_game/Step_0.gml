@@ -43,7 +43,7 @@ if(!(instance_exists(obj_upgrade)) && !(instance_exists(obj_template_complete)))
 		with(obj_heart) instance_destroy();
 	
 		// If we are on the last wave...
-		if(global.level == 10)
+		if(global.level == 1)
 		{
 			// Create the upgrade screen.
 			instance_create_layer(1920 / 2, 1080 / 2 - 150, "Instances", obj_template_complete);

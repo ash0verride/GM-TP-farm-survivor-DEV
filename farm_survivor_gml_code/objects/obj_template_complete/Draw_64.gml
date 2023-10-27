@@ -10,10 +10,8 @@ draw_rectangle(0, 0, 1920, 1080, 0);
 draw_set_colour(c_white);
 draw_set_alpha(1);
 
-draw_sprite(spr_ui_home_screen, 0, 1920 / 2, 1080 / 2);
-
 // Draw game over text.
-draw_text(x + 0, y + 300, string("You have completed the template!") + "");
+draw_text(x + 0, y + 300, string("You have completed the template!"));
 
 // Draw game over banner.
 draw_sprite(spr_well_done_banner, 0, x + 0, y + -50);
@@ -26,4 +24,4 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 
 // Draw game over text.
-draw_text(x + 0, y + -50, string("WELL DONE") + "");
+draw_text(x + 0, y + -50, string("WELL DONE"));

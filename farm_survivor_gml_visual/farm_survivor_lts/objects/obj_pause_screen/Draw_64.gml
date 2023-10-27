@@ -26,23 +26,13 @@ draw_set_alpha(l68BEDEFA_0 / $ff);
 
 /// @DnDAction : YoYo Games.Drawing.Draw_Sprite
 /// @DnDVersion : 1
-/// @DnDHash : 6EABCE65
-/// @DnDComment : Draw the backdrop.
-/// @DnDArgument : "x" "1920 / 2"
-/// @DnDArgument : "y" "1080 / 2"
-/// @DnDArgument : "sprite" "spr_ui_home_screen"
-/// @DnDSaveInfo : "sprite" "spr_ui_home_screen"
-draw_sprite(spr_ui_home_screen, 0, 1920 / 2, 1080 / 2);
-
-/// @DnDAction : YoYo Games.Drawing.Draw_Sprite
-/// @DnDVersion : 1
 /// @DnDHash : 1FC55A8C
 /// @DnDComment : Draw game over banner.
 /// @DnDArgument : "x" "1920 / 2"
-/// @DnDArgument : "y" "1080 / 2 - 200"
+/// @DnDArgument : "y" "1080 / 2 - 100"
 /// @DnDArgument : "sprite" "spr_game_over_banner"
 /// @DnDSaveInfo : "sprite" "spr_game_over_banner"
-draw_sprite(spr_game_over_banner, 0, 1920 / 2, 1080 / 2 - 200);
+draw_sprite(spr_game_over_banner, 0, 1920 / 2, 1080 / 2 - 100);
 
 /// @DnDAction : YoYo Games.Drawing.Set_Font
 /// @DnDVersion : 1
@@ -64,8 +54,8 @@ draw_set_valign(fa_middle);
 /// @DnDAction : YoYo Games.Drawing.Draw_Value
 /// @DnDVersion : 1
 /// @DnDHash : 70074EB9
-/// @DnDComment : Draw game over text.
+/// @DnDComment : Draw pause text.
 /// @DnDArgument : "x" "1920 / 2"
-/// @DnDArgument : "y" "1080 / 2 - 200"
+/// @DnDArgument : "y" "1080 / 2 - 100"
 /// @DnDArgument : "caption" ""PAUSED""
-draw_text(1920 / 2, 1080 / 2 - 200, string("PAUSED") + "");
+draw_text(1920 / 2, 1080 / 2 - 100, string("PAUSED") + "");

@@ -24,15 +24,6 @@ draw_set_colour($FFFFFFFF & $ffffff);
 var l7829E102_0=($FFFFFFFF >> 24);
 draw_set_alpha(l7829E102_0 / $ff);
 
-/// @DnDAction : YoYo Games.Drawing.Draw_Sprite
-/// @DnDVersion : 1
-/// @DnDHash : 326826D4
-/// @DnDArgument : "x" "1920 / 2"
-/// @DnDArgument : "y" "1080 / 2"
-/// @DnDArgument : "sprite" "spr_ui_home_screen"
-/// @DnDSaveInfo : "sprite" "spr_ui_home_screen"
-draw_sprite(spr_ui_home_screen, 0, 1920 / 2, 1080 / 2);
-
 /// @DnDAction : YoYo Games.Drawing.Draw_Value
 /// @DnDVersion : 1
 /// @DnDHash : 693B87C0
