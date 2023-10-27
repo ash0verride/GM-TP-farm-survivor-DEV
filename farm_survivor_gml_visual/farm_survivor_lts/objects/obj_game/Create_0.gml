@@ -4,6 +4,7 @@
 /// @DnDComment : Start the game music on a loop.
 /// @DnDArgument : "soundid" "snd_music_game"
 /// @DnDArgument : "loop" "1"
+/// @DnDSaveInfo : "soundid" "snd_music_game"
 audio_play_sound(snd_music_game, 0, 1, 1.0, undefined, 1.0);
 
 /// @DnDAction : YoYo Games.Common.Set_Global
@@ -52,6 +53,7 @@ global.enemy_health_bonus = 1;
 /// @DnDArgument : "xpos" "room_width / 2"
 /// @DnDArgument : "ypos" "room_height / 2"
 /// @DnDArgument : "objectid" "obj_hero"
+/// @DnDSaveInfo : "objectid" "obj_hero"
 instance_create_layer(room_width / 2, room_height / 2, "Instances", obj_hero);
 
 /// @DnDAction : YoYo Games.Common.Function_Call
@@ -90,4 +92,5 @@ alarm_set(0, global.enemy_spawn_speed);
 /// @DnDArgument : "ypos" "20"
 /// @DnDArgument : "objectid" "obj_pause_button"
 /// @DnDArgument : "layer" ""UpgradeScreen""
+/// @DnDSaveInfo : "objectid" "obj_pause_button"
 instance_create_layer(1820, 20, "UpgradeScreen", obj_pause_button);

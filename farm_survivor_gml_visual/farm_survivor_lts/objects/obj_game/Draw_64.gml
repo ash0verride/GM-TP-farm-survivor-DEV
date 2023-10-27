@@ -11,6 +11,7 @@ draw_set_alpha(l6A894E0E_0 / $ff);
 /// @DnDHash : 64E7A290
 /// @DnDComment : If an instance of obj_upgrade exists then$(13_10)that means we are on the upgrade screen...
 /// @DnDArgument : "obj" "obj_game_over"
+/// @DnDSaveInfo : "obj" "obj_game_over"
 var l64E7A290_0 = false;
 l64E7A290_0 = instance_exists(obj_game_over);
 if(l64E7A290_0)
@@ -28,6 +29,7 @@ if(l64E7A290_0)
 /// @DnDHash : 67C3CE8F
 /// @DnDComment : If the upgrade screen is open...
 /// @DnDArgument : "obj" "obj_upgrade"
+/// @DnDSaveInfo : "obj" "obj_upgrade"
 var l67C3CE8F_0 = false;
 l67C3CE8F_0 = instance_exists(obj_upgrade);
 if(l67C3CE8F_0)
@@ -48,6 +50,7 @@ if(l67C3CE8F_0)
 /// @DnDArgument : "y" "20"
 /// @DnDArgument : "sprite" "spr_shooting_attack_small"
 /// @DnDArgument : "image" "global.shooting[? "unlocked"]"
+/// @DnDSaveInfo : "sprite" "spr_shooting_attack_small"
 draw_sprite(spr_shooting_attack_small, global.shooting[? "unlocked"], 40, 20);
 
 /// @DnDAction : YoYo Games.Drawing.Draw_Sprite
@@ -58,6 +61,7 @@ draw_sprite(spr_shooting_attack_small, global.shooting[? "unlocked"], 40, 20);
 /// @DnDArgument : "y" "20"
 /// @DnDArgument : "sprite" "spr_trail_attack_small"
 /// @DnDArgument : "image" "global.trail[? "unlocked"]"
+/// @DnDSaveInfo : "sprite" "spr_trail_attack_small"
 draw_sprite(spr_trail_attack_small, global.trail[? "unlocked"], 40 + 120, 20);
 
 /// @DnDAction : YoYo Games.Drawing.Draw_Sprite
@@ -68,6 +72,7 @@ draw_sprite(spr_trail_attack_small, global.trail[? "unlocked"], 40 + 120, 20);
 /// @DnDArgument : "y" "20"
 /// @DnDArgument : "sprite" "spr_arcing_attack_small"
 /// @DnDArgument : "image" "global.swipe[? "unlocked"]"
+/// @DnDSaveInfo : "sprite" "spr_arcing_attack_small"
 draw_sprite(spr_arcing_attack_small, global.swipe[? "unlocked"], 40 + 240, 20);
 
 /// @DnDAction : YoYo Games.Drawing.Draw_Sprite_Transformed
@@ -78,6 +83,7 @@ draw_sprite(spr_arcing_attack_small, global.swipe[? "unlocked"], 40 + 240, 20);
 /// @DnDArgument : "y" "30"
 /// @DnDArgument : "xscale" "1120 / 65"
 /// @DnDArgument : "sprite" "spr_xpbar_back"
+/// @DnDSaveInfo : "sprite" "spr_xpbar_back"
 draw_sprite_ext(spr_xpbar_back, 0, 400, 30, 1120 / 65, 1, 0, $FFFFFF & $ffffff, 1);
 
 /// @DnDAction : YoYo Games.Common.Temp_Variable
@@ -96,6 +102,7 @@ var _fill = min(global.xp / global.xp_goal, 1);
 /// @DnDArgument : "y" "37"
 /// @DnDArgument : "xscale" "(1172 / 54) * _fill"
 /// @DnDArgument : "sprite" "spr_xpbar_fill"
+/// @DnDSaveInfo : "sprite" "spr_xpbar_fill"
 draw_sprite_ext(spr_xpbar_fill, 0, 407, 37, (1172 / 54) * _fill, 1, 0, $FFFFFF & $ffffff, 1);
 
 /// @DnDAction : YoYo Games.Drawing.Set_Font
@@ -103,6 +110,7 @@ draw_sprite_ext(spr_xpbar_fill, 0, 407, 37, (1172 / 54) * _fill, 1, 0, $FFFFFF &
 /// @DnDHash : 3FF11531
 /// @DnDComment : Set the font.
 /// @DnDArgument : "font" "fnt_small"
+/// @DnDSaveInfo : "font" "fnt_small"
 draw_set_font(fnt_small);
 
 /// @DnDAction : YoYo Games.Drawing.Set_Alignment

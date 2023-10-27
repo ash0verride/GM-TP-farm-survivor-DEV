@@ -58,6 +58,7 @@ if(hitpoints > 0 && sprite_index != hit_sprite)
 	/// @DnDArgument : "var_temp" "1"
 	/// @DnDArgument : "objectid" "obj_text_popup"
 	/// @DnDArgument : "layer" ""UpgradeScreen""
+	/// @DnDSaveInfo : "objectid" "obj_text_popup"
 	var _text = instance_create_layer(x + 0, y + 0, "UpgradeScreen", obj_text_popup);
 
 	/// @DnDAction : YoYo Games.Common.Variable
