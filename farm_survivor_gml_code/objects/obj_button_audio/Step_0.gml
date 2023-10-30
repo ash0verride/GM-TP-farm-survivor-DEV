@@ -6,15 +6,22 @@ if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right
 	{
 		// Play click sound effect.
 		audio_play_sound(snd_click, 0, 0, 1.0, undefined, 1.0);
+		
+		// Sets click state to true
+		is_clicked = true;
 	}
-
-	// If left mouse button is released...
-	if (mouse_check_button_released(mb_left))
-	{
-		// Get current volume.
-		var _volume = audio_get_master_gain(0);
 	
-		// Toggle volume on/off.
-		audio_set_master_gain(0, !_volume);
+	// Checks if mouse has been clicked on this button
+	if (is_clicked)
+	{
+		// If left mouse button is released...
+		if (mouse_check_button_released(mb_left))
+		{
+			// Get current volume.
+			var _volume = audio_get_master_gain(0);
+	
+			// Toggle volume on/off.
+			audio_set_master_gain(0, !_volume);
+		}	
 	}
 }

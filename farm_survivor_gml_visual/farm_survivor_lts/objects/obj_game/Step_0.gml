@@ -135,8 +135,8 @@ if(!(instance_exists(obj_upgrade)) && !(instance_exists(obj_template_complete)))
 		/// @DnDHash : 0540DA5B
 		/// @DnDComment : If we are on the last wave...
 		/// @DnDParent : 6B32F2A6
-		/// @DnDArgument : "expr" "global.level == 1"
-		if(global.level == 1)
+		/// @DnDArgument : "expr" "global.level == 10"
+		if(global.level == 10)
 		{
 			/// @DnDAction : YoYo Games.Instances.Create_Instance
 			/// @DnDVersion : 1

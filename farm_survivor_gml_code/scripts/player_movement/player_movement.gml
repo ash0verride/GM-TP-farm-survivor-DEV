@@ -20,11 +20,19 @@ function player_movement()
 	// If the left mouse button is held down...
 	if (mouse_check_button(mb_left))
 	{
-		// Set horizontal and vertical speeds based
-		// on the difference between the current mouse
-		// poisition and the anchor position.
-		hspeed = device_mouse_x_to_gui(0) - global.mouse_anchor_x;
-		vspeed = device_mouse_y_to_gui(0) - global.mouse_anchor_y;
+		// If the button is active
+		if(instance_exists(obj_pause_button))
+		{
+			// If the pause button is not clicked
+			if (!obj_pause_button.is_clicked)
+			{
+				// Set horizontal and vertical speeds based
+				// on the difference between the current mouse
+				// poisition and the anchor position.
+				hspeed = device_mouse_x_to_gui(0) - global.mouse_anchor_x;
+				vspeed = device_mouse_y_to_gui(0) - global.mouse_anchor_y;
+			}
+		}
 	}
 
 	// If left mouse button is NOT held down...

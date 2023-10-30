@@ -4,17 +4,24 @@ if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right
 	if (mouse_check_button_pressed(mb_left))
 	{
 		audio_play_sound(snd_click, 0, 0, 1.0, undefined, 1.0);
+		
+		// Sets click state to true
+		is_clicked = true;
 	}
-
-	// If left mouse button is released.
-	if (mouse_check_button_released(mb_left))
+	
+	// Checks if mouse has been clicked on this button
+	if (is_clicked)
 	{
-		audio_play_sound(snd_ui_select, 0, 0, 1.0, undefined, 1.0);
+		// If left mouse button is released.
+		if (mouse_check_button_released(mb_left))
+		{
+			audio_play_sound(snd_ui_select, 0, 0, 1.0, undefined, 1.0);
 	
-		with(obj_pause_screen) instance_destroy();
+			with(obj_pause_screen) instance_destroy();
 	
-		with(obj_button_exit) instance_destroy();
+			with(obj_button_exit) instance_destroy();
 	
-		with(obj_button_resume) instance_destroy();
+			with(obj_button_resume) instance_destroy();
+		}
 	}
 }

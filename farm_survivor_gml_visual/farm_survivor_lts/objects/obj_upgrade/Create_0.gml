@@ -11,3 +11,10 @@ upgrade_data = undefined;
 /// @DnDArgument : "expr" "false"
 /// @DnDArgument : "var" "mouse_over"
 mouse_over = false;
+
+/// @DnDAction : YoYo Games.Common.Variable
+/// @DnDVersion : 1
+/// @DnDHash : 7997D607
+/// @DnDArgument : "expr" "false"
+/// @DnDArgument : "var" "is_clicked"
+is_clicked = false;

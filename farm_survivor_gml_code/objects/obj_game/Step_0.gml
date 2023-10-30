@@ -4,6 +4,8 @@ if(global.paused)
 	// Increment alarm 0 to stop it triggering
 	// while paused.
 	alarm_set(0, 1 + alarm_get(0));
+	
+	// SETS ANIMATION SPEEDS TO 0
 }
 
 // If the game is NOT over...
@@ -43,7 +45,7 @@ if(!(instance_exists(obj_upgrade)) && !(instance_exists(obj_template_complete)))
 		with(obj_heart) instance_destroy();
 	
 		// If we are on the last wave...
-		if(global.level == 1)
+		if(global.level == 10)
 		{
 			// Create the upgrade screen.
 			instance_create_layer(1920 / 2, 1080 / 2, "UpgradeScreen", obj_template_complete);

@@ -18,6 +18,42 @@ if(l29049616_0)
 
 /// @DnDAction : YoYo Games.Instances.If_Instance_Exists
 /// @DnDVersion : 1
+/// @DnDHash : 153E49D1
+/// @DnDComment : If the game over screen is open...
+/// @DnDArgument : "obj" "obj_game_over"
+/// @DnDSaveInfo : "obj" "obj_game_over"
+var l153E49D1_0 = false;
+l153E49D1_0 = instance_exists(obj_game_over);
+if(l153E49D1_0)
+{
+	/// @DnDAction : YoYo Games.Common.Exit_Event
+	/// @DnDVersion : 1
+	/// @DnDHash : 579805E0
+	/// @DnDComment : Exit event.
+	/// @DnDParent : 153E49D1
+	exit;
+}
+
+/// @DnDAction : YoYo Games.Instances.If_Instance_Exists
+/// @DnDVersion : 1
+/// @DnDHash : 57142059
+/// @DnDComment : If the end screen is open...
+/// @DnDArgument : "obj" "obj_template_complete"
+/// @DnDSaveInfo : "obj" "obj_template_complete"
+var l57142059_0 = false;
+l57142059_0 = instance_exists(obj_template_complete);
+if(l57142059_0)
+{
+	/// @DnDAction : YoYo Games.Common.Exit_Event
+	/// @DnDVersion : 1
+	/// @DnDHash : 27EC6040
+	/// @DnDComment : Exit event.
+	/// @DnDParent : 57142059
+	exit;
+}
+
+/// @DnDAction : YoYo Games.Instances.If_Instance_Exists
+/// @DnDVersion : 1
 /// @DnDHash : 05E7C731
 /// @DnDComment : If the upgrade screen is open...
 /// @DnDArgument : "obj" "obj_upgrade"
@@ -32,6 +68,34 @@ if(l05E7C731_0)
 	/// @DnDComment : Exit event.
 	/// @DnDParent : 05E7C731
 	exit;
+}
+
+/// @DnDAction : YoYo Games.Instances.If_Instance_Exists
+/// @DnDVersion : 1
+/// @DnDHash : 0491B7AC
+/// @DnDComment : If the pause button exists
+/// @DnDArgument : "obj" "obj_pause_button"
+/// @DnDSaveInfo : "obj" "obj_pause_button"
+var l0491B7AC_0 = false;
+l0491B7AC_0 = instance_exists(obj_pause_button);
+if(l0491B7AC_0)
+{
+	/// @DnDAction : YoYo Games.Common.If_Variable
+	/// @DnDVersion : 1
+	/// @DnDHash : 51E973C3
+	/// @DnDComment : if the pause button is clicked
+	/// @DnDParent : 0491B7AC
+	/// @DnDArgument : "var" "obj_pause_button.is_clicked"
+	/// @DnDArgument : "value" "true"
+	if(obj_pause_button.is_clicked == true)
+	{
+		/// @DnDAction : YoYo Games.Common.Exit_Event
+		/// @DnDVersion : 1
+		/// @DnDHash : 648F5189
+		/// @DnDComment : Exit event.
+		/// @DnDParent : 51E973C3
+		exit;
+	}
 }
 
 /// @DnDAction : YoYo Games.Mouse & Keyboard.If_Mouse_Down
