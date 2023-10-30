@@ -34,9 +34,27 @@ if(global.paused)
 /// @DnDAction : YoYo Games.Common.If_Expression
 /// @DnDVersion : 1
 /// @DnDHash : 2D9E0552
-/// @DnDArgument : "expr" "instance_exists(obj_upgrade) || instance_exists(obj_template_complete)"
-if(instance_exists(obj_upgrade) || instance_exists(obj_template_complete))
+/// @DnDArgument : "expr" "instance_exists(obj_upgrade) || instance_exists(obj_template_complete) || instance_exists(obj_game_over)"
+if(instance_exists(obj_upgrade) || instance_exists(obj_template_complete) || instance_exists(obj_game_over))
 {
+	/// @DnDAction : YoYo Games.Instances.Set_Alarm
+	/// @DnDVersion : 1
+	/// @DnDHash : 6F50798C
+	/// @DnDComment : Increment our weapon cooldown timers$(13_10)so that they don't trigger while we're$(13_10)paused.
+	/// @DnDInput : 3
+	/// @DnDParent : 2D9E0552
+	/// @DnDArgument : "steps" "1"
+	/// @DnDArgument : "steps_relative" "1"
+	/// @DnDArgument : "steps_1" "1"
+	/// @DnDArgument : "steps_relative_1" "1"
+	/// @DnDArgument : "steps_2" "1"
+	/// @DnDArgument : "steps_relative_2" "1"
+	/// @DnDArgument : "alarm_1" "1"
+	/// @DnDArgument : "alarm_2" "2"
+	alarm_set(0, 1 + alarm_get(0));
+	alarm_set(1, 1 + alarm_get(1));
+	alarm_set(2, 1 + alarm_get(2));
+
 	/// @DnDAction : YoYo Games.Movement.Set_Speed
 	/// @DnDVersion : 1
 	/// @DnDHash : 0BE9F742

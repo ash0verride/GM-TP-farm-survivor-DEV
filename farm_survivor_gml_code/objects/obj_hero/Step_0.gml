@@ -12,8 +12,15 @@ if(global.paused)
 	exit;
 }
 
-if(instance_exists(obj_upgrade) || instance_exists(obj_template_complete))
+if(instance_exists(obj_upgrade) || instance_exists(obj_template_complete) || instance_exists(obj_game_over))
 {
+	// Increment our weapon cooldown timers
+	// so that they don't trigger while we're
+	// paused.
+	alarm_set(0, 1 + alarm_get(0));
+	alarm_set(1, 1 + alarm_get(1));
+	alarm_set(2, 1 + alarm_get(2));
+	
 	// Stop moving the hero.
 	speed = 0;
 
