@@ -26,22 +26,13 @@ draw_set_alpha(l7829E102_0 / $ff);
 
 /// @DnDAction : YoYo Games.Drawing.Draw_Sprite
 /// @DnDVersion : 1
-/// @DnDHash : 326826D4
-/// @DnDArgument : "x" "1920 / 2"
-/// @DnDArgument : "y" "1080 / 2"
-/// @DnDArgument : "sprite" "spr_ui_home_screen"
-/// @DnDSaveInfo : "sprite" "spr_ui_home_screen"
-draw_sprite(spr_ui_home_screen, 0, 1920 / 2, 1080 / 2);
-
-/// @DnDAction : YoYo Games.Drawing.Draw_Sprite
-/// @DnDVersion : 1
 /// @DnDHash : 18165491
 /// @DnDComment : Draw game over banner.
 /// @DnDArgument : "x" "1920 / 2"
-/// @DnDArgument : "y" "1080 / 2 - 200"
+/// @DnDArgument : "y" "1080 / 2 "
 /// @DnDArgument : "sprite" "spr_game_over_banner"
 /// @DnDSaveInfo : "sprite" "spr_game_over_banner"
-draw_sprite(spr_game_over_banner, 0, 1920 / 2, 1080 / 2 - 200);
+draw_sprite(spr_game_over_banner, 0, 1920 / 2, 1080 / 2 );
 
 /// @DnDAction : YoYo Games.Drawing.Set_Font
 /// @DnDVersion : 1
@@ -65,6 +56,6 @@ draw_set_valign(fa_middle);
 /// @DnDHash : 24A43BC5
 /// @DnDComment : Draw game over text.
 /// @DnDArgument : "x" "1920 / 2"
-/// @DnDArgument : "y" "1080 / 2 - 200"
+/// @DnDArgument : "y" "1080 / 2"
 /// @DnDArgument : "caption" ""GAME OVER""
-draw_text(1920 / 2, 1080 / 2 - 200, string("GAME OVER") + "");
+draw_text(1920 / 2, 1080 / 2, string("GAME OVER") + "");

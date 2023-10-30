@@ -46,7 +46,7 @@ if(!(instance_exists(obj_upgrade)) && !(instance_exists(obj_template_complete)))
 		if(global.level == 1)
 		{
 			// Create the upgrade screen.
-			instance_create_layer(1920 / 2, 1080 / 2 - 150, "Instances", obj_template_complete);
+			instance_create_layer(1920 / 2, 1080 / 2, "UpgradeScreen", obj_template_complete);
 		}
 	
 		else

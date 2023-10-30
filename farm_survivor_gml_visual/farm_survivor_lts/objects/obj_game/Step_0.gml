@@ -135,8 +135,8 @@ if(!(instance_exists(obj_upgrade)) && !(instance_exists(obj_template_complete)))
 		/// @DnDHash : 0540DA5B
 		/// @DnDComment : If we are on the last wave...
 		/// @DnDParent : 6B32F2A6
-		/// @DnDArgument : "expr" "global.level == 10"
-		if(global.level == 10)
+		/// @DnDArgument : "expr" "global.level == 1"
+		if(global.level == 1)
 		{
 			/// @DnDAction : YoYo Games.Instances.Create_Instance
 			/// @DnDVersion : 1
@@ -144,10 +144,11 @@ if(!(instance_exists(obj_upgrade)) && !(instance_exists(obj_template_complete)))
 			/// @DnDComment : Create the upgrade screen.
 			/// @DnDParent : 0540DA5B
 			/// @DnDArgument : "xpos" "1920 / 2"
-			/// @DnDArgument : "ypos" "1080 / 2 - 150"
+			/// @DnDArgument : "ypos" "1080 / 2"
 			/// @DnDArgument : "objectid" "obj_template_complete"
+			/// @DnDArgument : "layer" ""UpgradeScreen""
 			/// @DnDSaveInfo : "objectid" "obj_template_complete"
-			instance_create_layer(1920 / 2, 1080 / 2 - 150, "Instances", obj_template_complete);
+			instance_create_layer(1920 / 2, 1080 / 2, "UpgradeScreen", obj_template_complete);
 		}
 	
 		/// @DnDAction : YoYo Games.Common.Else
