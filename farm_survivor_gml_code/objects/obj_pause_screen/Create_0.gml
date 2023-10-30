@@ -1,5 +1,5 @@
 // Create exit button.
-instance_create_layer(x + -200, 1080 - 150, "Buttons", obj_button_exit);
+instance_create_layer(x - 180, 1080 - 330, "Buttons", obj_button_exit);
 
 // Create resume button.
-instance_create_layer(x + 200, 1080 - 150, "Buttons", obj_button_resume);
+instance_create_layer(x + 180, 1080 - 330, "Buttons", obj_button_resume);

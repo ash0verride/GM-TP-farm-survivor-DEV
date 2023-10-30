@@ -39,44 +39,78 @@ if(!(instance_exists(obj_pause_screen)) && !(instance_exists(obj_upgrade_screen)
 			/// @DnDArgument : "soundid" "snd_click"
 			/// @DnDSaveInfo : "soundid" "snd_click"
 			audio_play_sound(snd_click, 0, 0, 1.0, undefined, 1.0);
+		
+			/// @DnDAction : YoYo Games.Common.Variable
+			/// @DnDVersion : 1
+			/// @DnDHash : 3334636C
+			/// @DnDComment : // Sets click state to  true
+			/// @DnDParent : 669B137E
+			/// @DnDArgument : "expr" "true"
+			/// @DnDArgument : "var" "is_clicked"
+			is_clicked = true;
 		}
 	
-		/// @DnDAction : YoYo Games.Mouse & Keyboard.If_Mouse_Released
-		/// @DnDVersion : 1.1
-		/// @DnDHash : 44C8EEA7
-		/// @DnDComment : If left mouse button is released...
+		/// @DnDAction : YoYo Games.Common.If_Variable
+		/// @DnDVersion : 1
+		/// @DnDHash : 3B261D28
+		/// @DnDComment : Checks if mouse has been clicked on this button
 		/// @DnDParent : 0E95FC62
-		var l44C8EEA7_0;
-		l44C8EEA7_0 = mouse_check_button_released(mb_left);
-		if (l44C8EEA7_0)
+		/// @DnDArgument : "var" "is_clicked"
+		/// @DnDArgument : "value" "true"
+		if(is_clicked == true)
 		{
-			/// @DnDAction : YoYo Games.Audio.Play_Audio
+			/// @DnDAction : YoYo Games.Mouse & Keyboard.If_Mouse_Released
 			/// @DnDVersion : 1.1
-			/// @DnDHash : 2E5508C7
-			/// @DnDParent : 44C8EEA7
-			/// @DnDArgument : "soundid" "snd_ui_select"
-			/// @DnDSaveInfo : "soundid" "snd_ui_select"
-			audio_play_sound(snd_ui_select, 0, 0, 1.0, undefined, 1.0);
-		
-			/// @DnDAction : YoYo Games.Instances.Create_Instance
-			/// @DnDVersion : 1
-			/// @DnDHash : 406C270B
-			/// @DnDComment : Create pause screen.
-			/// @DnDParent : 44C8EEA7
-			/// @DnDArgument : "xpos" "1920 / 2"
-			/// @DnDArgument : "ypos" "1080 / 2"
-			/// @DnDArgument : "objectid" "obj_pause_screen"
-			/// @DnDArgument : "layer" ""UpgradeScreen""
-			/// @DnDSaveInfo : "objectid" "obj_pause_screen"
-			instance_create_layer(1920 / 2, 1080 / 2, "UpgradeScreen", obj_pause_screen);
-		
-			/// @DnDAction : YoYo Games.Common.Function_Call
-			/// @DnDVersion : 1
-			/// @DnDHash : 6624DE72
-			/// @DnDComment : Call the pause function.
-			/// @DnDParent : 44C8EEA7
-			/// @DnDArgument : "function" "pause"
-			pause();
+			/// @DnDHash : 44C8EEA7
+			/// @DnDComment : If left mouse button is released...
+			/// @DnDParent : 3B261D28
+			var l44C8EEA7_0;
+			l44C8EEA7_0 = mouse_check_button_released(mb_left);
+			if (l44C8EEA7_0)
+			{
+				/// @DnDAction : YoYo Games.Audio.Play_Audio
+				/// @DnDVersion : 1.1
+				/// @DnDHash : 2E5508C7
+				/// @DnDParent : 44C8EEA7
+				/// @DnDArgument : "soundid" "snd_ui_select"
+				/// @DnDSaveInfo : "soundid" "snd_ui_select"
+				audio_play_sound(snd_ui_select, 0, 0, 1.0, undefined, 1.0);
+			
+				/// @DnDAction : YoYo Games.Instances.Create_Instance
+				/// @DnDVersion : 1
+				/// @DnDHash : 406C270B
+				/// @DnDComment : Create pause screen.
+				/// @DnDParent : 44C8EEA7
+				/// @DnDArgument : "xpos" "1920 / 2"
+				/// @DnDArgument : "ypos" "1080 / 2"
+				/// @DnDArgument : "objectid" "obj_pause_screen"
+				/// @DnDArgument : "layer" ""UpgradeScreen""
+				/// @DnDSaveInfo : "objectid" "obj_pause_screen"
+				instance_create_layer(1920 / 2, 1080 / 2, "UpgradeScreen", obj_pause_screen);
+			
+				/// @DnDAction : YoYo Games.Common.Function_Call
+				/// @DnDVersion : 1
+				/// @DnDHash : 6624DE72
+				/// @DnDComment : Call the pause function.
+				/// @DnDParent : 44C8EEA7
+				/// @DnDArgument : "function" "pause"
+				pause();
+			}
 		}
+	}
+
+	/// @DnDAction : YoYo Games.Common.Else
+	/// @DnDVersion : 1
+	/// @DnDHash : 0EF2474B
+	/// @DnDParent : 5DB9E288
+	else
+	{
+		/// @DnDAction : YoYo Games.Common.Variable
+		/// @DnDVersion : 1
+		/// @DnDHash : 6DCD8D67
+		/// @DnDParent : 0EF2474B
+		/// @DnDArgument : "expr" "false"
+		/// @DnDArgument : "var" "is_clicked"
+		is_clicked = false;
 	}
 }

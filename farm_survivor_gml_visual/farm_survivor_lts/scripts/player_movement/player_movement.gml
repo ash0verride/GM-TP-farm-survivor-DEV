@@ -54,18 +54,41 @@ function player_movement()
 	l21A5A03A_0 = mouse_check_button(mb_left);
 	if (l21A5A03A_0)
 	{
-		/// @DnDAction : YoYo Games.Common.Variable
+		/// @DnDAction : YoYo Games.Instances.If_Instance_Exists
 		/// @DnDVersion : 1
-		/// @DnDHash : 79BB788B
-		/// @DnDComment : Set horizontal and vertical speeds based$(13_10)on the difference between the current mouse$(13_10)poisition and the anchor position.
-		/// @DnDInput : 2
+		/// @DnDHash : 266BAED4
+		/// @DnDComment : If the pause button exists
 		/// @DnDParent : 21A5A03A
-		/// @DnDArgument : "expr" "device_mouse_x_to_gui(0) - global.mouse_anchor_x"
-		/// @DnDArgument : "expr_1" "device_mouse_y_to_gui(0) - global.mouse_anchor_y"
-		/// @DnDArgument : "var" "hspeed"
-		/// @DnDArgument : "var_1" "vspeed"
-		hspeed = device_mouse_x_to_gui(0) - global.mouse_anchor_x;
-		vspeed = device_mouse_y_to_gui(0) - global.mouse_anchor_y;
+		/// @DnDArgument : "obj" "obj_pause_button"
+		/// @DnDSaveInfo : "obj" "obj_pause_button"
+		var l266BAED4_0 = false;
+		l266BAED4_0 = instance_exists(obj_pause_button);
+		if(l266BAED4_0)
+		{
+			/// @DnDAction : YoYo Games.Common.If_Variable
+			/// @DnDVersion : 1
+			/// @DnDHash : 3DDAFDE2
+			/// @DnDComment : // If the pause button is not clicked
+			/// @DnDParent : 266BAED4
+			/// @DnDArgument : "var" "obj_pause_button.is_clicked"
+			/// @DnDArgument : "not" "1"
+			/// @DnDArgument : "value" "true"
+			if(!(obj_pause_button.is_clicked == true))
+			{
+				/// @DnDAction : YoYo Games.Common.Variable
+				/// @DnDVersion : 1
+				/// @DnDHash : 79BB788B
+				/// @DnDComment : Set horizontal and vertical speeds based$(13_10)on the difference between the current mouse$(13_10)poisition and the anchor position.
+				/// @DnDInput : 2
+				/// @DnDParent : 3DDAFDE2
+				/// @DnDArgument : "expr" "device_mouse_x_to_gui(0) - global.mouse_anchor_x"
+				/// @DnDArgument : "expr_1" "device_mouse_y_to_gui(0) - global.mouse_anchor_y"
+				/// @DnDArgument : "var" "hspeed"
+				/// @DnDArgument : "var_1" "vspeed"
+				hspeed = device_mouse_x_to_gui(0) - global.mouse_anchor_x;
+				vspeed = device_mouse_y_to_gui(0) - global.mouse_anchor_y;
+			}
+		}
 	}
 
 	/// @DnDAction : YoYo Games.Common.Else

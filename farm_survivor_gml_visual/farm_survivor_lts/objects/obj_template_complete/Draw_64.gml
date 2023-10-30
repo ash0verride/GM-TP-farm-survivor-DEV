@@ -26,33 +26,13 @@ draw_set_alpha(l7829E102_0 / $ff);
 
 /// @DnDAction : YoYo Games.Drawing.Draw_Sprite
 /// @DnDVersion : 1
-/// @DnDHash : 326826D4
-/// @DnDArgument : "x" "1920 / 2"
-/// @DnDArgument : "y" "1080 / 2"
-/// @DnDArgument : "sprite" "spr_ui_home_screen"
-/// @DnDSaveInfo : "sprite" "spr_ui_home_screen"
-draw_sprite(spr_ui_home_screen, 0, 1920 / 2, 1080 / 2);
-
-/// @DnDAction : YoYo Games.Drawing.Draw_Value
-/// @DnDVersion : 1
-/// @DnDHash : 693B87C0
-/// @DnDComment : Draw game over text.
-/// @DnDArgument : "x_relative" "1"
-/// @DnDArgument : "y" "300"
-/// @DnDArgument : "y_relative" "1"
-/// @DnDArgument : "caption" ""You have completed the template!""
-draw_text(x + 0, y + 300, string("You have completed the template!") + "");
-
-/// @DnDAction : YoYo Games.Drawing.Draw_Sprite
-/// @DnDVersion : 1
 /// @DnDHash : 18165491
 /// @DnDComment : Draw game over banner.
 /// @DnDArgument : "x_relative" "1"
-/// @DnDArgument : "y" "-50"
 /// @DnDArgument : "y_relative" "1"
 /// @DnDArgument : "sprite" "spr_well_done_banner"
 /// @DnDSaveInfo : "sprite" "spr_well_done_banner"
-draw_sprite(spr_well_done_banner, 0, x + 0, y + -50);
+draw_sprite(spr_well_done_banner, 0, x + 0, y + 0);
 
 /// @DnDAction : YoYo Games.Drawing.Set_Font
 /// @DnDVersion : 1
@@ -76,7 +56,33 @@ draw_set_valign(fa_middle);
 /// @DnDHash : 24A43BC5
 /// @DnDComment : Draw game over text.
 /// @DnDArgument : "x_relative" "1"
-/// @DnDArgument : "y" "-50"
+/// @DnDArgument : "y" "-10"
 /// @DnDArgument : "y_relative" "1"
 /// @DnDArgument : "caption" ""WELL DONE""
-draw_text(x + 0, y + -50, string("WELL DONE") + "");
+draw_text(x + 0, y + -10, string("WELL DONE") + "");
+
+/// @DnDAction : YoYo Games.Drawing.Set_Font
+/// @DnDVersion : 1
+/// @DnDHash : 295B9FB2
+/// @DnDComment : Set font.
+/// @DnDArgument : "font" "fnt_small_medium"
+/// @DnDSaveInfo : "font" "fnt_small_medium"
+draw_set_font(fnt_small_medium);
+
+/// @DnDAction : YoYo Games.Drawing.Draw_Value
+/// @DnDVersion : 1
+/// @DnDHash : 693B87C0
+/// @DnDComment : Draw game over text.
+/// @DnDArgument : "x_relative" "1"
+/// @DnDArgument : "y" "30"
+/// @DnDArgument : "y_relative" "1"
+/// @DnDArgument : "caption" ""You have completed the template!""
+draw_text(x + 0, y + 30, string("You have completed the template!") + "");
+
+/// @DnDAction : YoYo Games.Drawing.Set_Font
+/// @DnDVersion : 1
+/// @DnDHash : 5EDAE46F
+/// @DnDComment : Set font.
+/// @DnDArgument : "font" "fnt_large"
+/// @DnDSaveInfo : "font" "fnt_large"
+draw_set_font(fnt_large);

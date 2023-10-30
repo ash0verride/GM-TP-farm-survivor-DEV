@@ -7,10 +7,10 @@ audio_stop_all();
 /// @DnDAction : YoYo Games.Audio.Play_Audio
 /// @DnDVersion : 1.1
 /// @DnDHash : 5D1E5FA7
-/// @DnDComment : Play the lose game jingle.
-/// @DnDArgument : "soundid" "snd_lose"
-/// @DnDSaveInfo : "soundid" "snd_lose"
-audio_play_sound(snd_lose, 0, 0, 1.0, undefined, 1.0);
+/// @DnDComment : Play the win game jingle.
+/// @DnDArgument : "soundid" "snd_win"
+/// @DnDSaveInfo : "soundid" "snd_win"
+audio_play_sound(snd_win, 0, 0, 1.0, undefined, 1.0);
 
 /// @DnDAction : YoYo Games.Instances.Create_Instance
 /// @DnDVersion : 1
@@ -18,11 +18,11 @@ audio_play_sound(snd_lose, 0, 0, 1.0, undefined, 1.0);
 /// @DnDComment : Create exit button.
 /// @DnDArgument : "xpos" "-200"
 /// @DnDArgument : "xpos_relative" "1"
-/// @DnDArgument : "ypos" "1080 - 150"
+/// @DnDArgument : "ypos" "1080 - 330"
 /// @DnDArgument : "objectid" "obj_button_exit"
 /// @DnDArgument : "layer" ""Buttons""
 /// @DnDSaveInfo : "objectid" "obj_button_exit"
-instance_create_layer(x + -200, 1080 - 150, "Buttons", obj_button_exit);
+instance_create_layer(x + -200, 1080 - 330, "Buttons", obj_button_exit);
 
 /// @DnDAction : YoYo Games.Instances.Create_Instance
 /// @DnDVersion : 1
@@ -30,8 +30,8 @@ instance_create_layer(x + -200, 1080 - 150, "Buttons", obj_button_exit);
 /// @DnDComment : Create retry button.
 /// @DnDArgument : "xpos" "200"
 /// @DnDArgument : "xpos_relative" "1"
-/// @DnDArgument : "ypos" "1080 - 150"
+/// @DnDArgument : "ypos" "1080 - 330"
 /// @DnDArgument : "objectid" "obj_button_retry"
 /// @DnDArgument : "layer" ""Buttons""
 /// @DnDSaveInfo : "objectid" "obj_button_retry"
-instance_create_layer(x + 200, 1080 - 150, "Buttons", obj_button_retry);
+instance_create_layer(x + 200, 1080 - 330, "Buttons", obj_button_retry);

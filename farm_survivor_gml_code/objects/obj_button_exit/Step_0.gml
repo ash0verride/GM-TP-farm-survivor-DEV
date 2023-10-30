@@ -4,14 +4,21 @@ if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right
 	if (mouse_check_button_pressed(mb_left))
 	{
 		audio_play_sound(snd_click, 0, 0, 1.0, undefined, 1.0);
+		
+		// Sets click state to true
+		is_clicked = true;
 	}
-
-	// If left mouse button is pressed...
-	if (mouse_check_button_released(mb_left))
-	{
-		audio_play_sound(snd_ui_select, 0, 0, 1.0, undefined, 1.0);
 	
-		// Go to the main menu.
-		room_goto(rm_menu);
+	// Checks if mouse has been clicked on this button
+	if (is_clicked)
+	{
+		// If left mouse button is pressed...
+		if (mouse_check_button_released(mb_left))
+		{
+			audio_play_sound(snd_ui_select, 0, 0, 1.0, undefined, 1.0);
+	
+			// Go to the main menu.
+			room_goto(rm_menu);
+		}
 	}
 }

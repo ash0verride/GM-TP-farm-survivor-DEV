@@ -24,44 +24,63 @@ if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right
 		/// @DnDArgument : "soundid" "snd_click"
 		/// @DnDSaveInfo : "soundid" "snd_click"
 		audio_play_sound(snd_click, 0, 0, 1.0, undefined, 1.0);
+	
+		/// @DnDAction : YoYo Games.Common.Variable
+		/// @DnDVersion : 1
+		/// @DnDHash : 041D61DC
+		/// @DnDComment : // Sets click state to  true
+		/// @DnDParent : 6FC02D0D
+		/// @DnDArgument : "expr" "true"
+		/// @DnDArgument : "var" "is_clicked"
+		is_clicked = true;
 	}
 
-	/// @DnDAction : YoYo Games.Mouse & Keyboard.If_Mouse_Released
-	/// @DnDVersion : 1.1
-	/// @DnDHash : 44C8EEA7
-	/// @DnDComment : If left mouse button is released.
+	/// @DnDAction : YoYo Games.Common.If_Variable
+	/// @DnDVersion : 1
+	/// @DnDHash : 5CC4D35E
+	/// @DnDComment : Checks if mouse has been clicked on this button
 	/// @DnDParent : 0E95FC62
-	var l44C8EEA7_0;
-	l44C8EEA7_0 = mouse_check_button_released(mb_left);
-	if (l44C8EEA7_0)
+	/// @DnDArgument : "var" "is_clicked"
+	/// @DnDArgument : "value" "true"
+	if(is_clicked == true)
 	{
-		/// @DnDAction : YoYo Games.Audio.Play_Audio
+		/// @DnDAction : YoYo Games.Mouse & Keyboard.If_Mouse_Released
 		/// @DnDVersion : 1.1
-		/// @DnDHash : 4180B094
-		/// @DnDParent : 44C8EEA7
-		/// @DnDArgument : "soundid" "snd_ui_select"
-		/// @DnDSaveInfo : "soundid" "snd_ui_select"
-		audio_play_sound(snd_ui_select, 0, 0, 1.0, undefined, 1.0);
-	
-		/// @DnDAction : YoYo Games.Instances.Destroy_Instance
-		/// @DnDVersion : 1
-		/// @DnDHash : 5BCBE65C
-		/// @DnDApplyTo : obj_pause_screen
-		/// @DnDParent : 44C8EEA7
-		with(obj_pause_screen) instance_destroy();
-	
-		/// @DnDAction : YoYo Games.Instances.Destroy_Instance
-		/// @DnDVersion : 1
-		/// @DnDHash : 3CFAD2EC
-		/// @DnDApplyTo : obj_button_exit
-		/// @DnDParent : 44C8EEA7
-		with(obj_button_exit) instance_destroy();
-	
-		/// @DnDAction : YoYo Games.Instances.Destroy_Instance
-		/// @DnDVersion : 1
-		/// @DnDHash : 5A9E8435
-		/// @DnDApplyTo : obj_button_resume
-		/// @DnDParent : 44C8EEA7
-		with(obj_button_resume) instance_destroy();
+		/// @DnDHash : 44C8EEA7
+		/// @DnDComment : If left mouse button is released.
+		/// @DnDParent : 5CC4D35E
+		var l44C8EEA7_0;
+		l44C8EEA7_0 = mouse_check_button_released(mb_left);
+		if (l44C8EEA7_0)
+		{
+			/// @DnDAction : YoYo Games.Audio.Play_Audio
+			/// @DnDVersion : 1.1
+			/// @DnDHash : 4180B094
+			/// @DnDParent : 44C8EEA7
+			/// @DnDArgument : "soundid" "snd_ui_select"
+			/// @DnDSaveInfo : "soundid" "snd_ui_select"
+			audio_play_sound(snd_ui_select, 0, 0, 1.0, undefined, 1.0);
+		
+			/// @DnDAction : YoYo Games.Instances.Destroy_Instance
+			/// @DnDVersion : 1
+			/// @DnDHash : 5BCBE65C
+			/// @DnDApplyTo : obj_pause_screen
+			/// @DnDParent : 44C8EEA7
+			with(obj_pause_screen) instance_destroy();
+		
+			/// @DnDAction : YoYo Games.Instances.Destroy_Instance
+			/// @DnDVersion : 1
+			/// @DnDHash : 3CFAD2EC
+			/// @DnDApplyTo : obj_button_exit
+			/// @DnDParent : 44C8EEA7
+			with(obj_button_exit) instance_destroy();
+		
+			/// @DnDAction : YoYo Games.Instances.Destroy_Instance
+			/// @DnDVersion : 1
+			/// @DnDHash : 5A9E8435
+			/// @DnDApplyTo : obj_button_resume
+			/// @DnDParent : 44C8EEA7
+			with(obj_button_resume) instance_destroy();
+		}
 	}
 }
