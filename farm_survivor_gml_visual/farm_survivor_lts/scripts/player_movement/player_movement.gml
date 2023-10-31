@@ -81,12 +81,12 @@ function player_movement()
 				/// @DnDComment : Set horizontal and vertical speeds based$(13_10)on the difference between the current mouse$(13_10)poisition and the anchor position.
 				/// @DnDInput : 2
 				/// @DnDParent : 3DDAFDE2
-				/// @DnDArgument : "expr" "device_mouse_x_to_gui(0) - global.mouse_anchor_x"
-				/// @DnDArgument : "expr_1" "device_mouse_y_to_gui(0) - global.mouse_anchor_y"
+				/// @DnDArgument : "expr" "(device_mouse_x_to_gui(0) - global.mouse_anchor_x) * 0.1"
+				/// @DnDArgument : "expr_1" "(device_mouse_y_to_gui(0) - global.mouse_anchor_y) * 0.1"
 				/// @DnDArgument : "var" "hspeed"
 				/// @DnDArgument : "var_1" "vspeed"
-				hspeed = device_mouse_x_to_gui(0) - global.mouse_anchor_x;
-				vspeed = device_mouse_y_to_gui(0) - global.mouse_anchor_y;
+				hspeed = (device_mouse_x_to_gui(0) - global.mouse_anchor_x) * 0.1;
+				vspeed = (device_mouse_y_to_gui(0) - global.mouse_anchor_y) * 0.1;
 			}
 		}
 	}

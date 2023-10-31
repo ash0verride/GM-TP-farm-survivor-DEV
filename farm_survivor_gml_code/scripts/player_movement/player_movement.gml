@@ -29,8 +29,8 @@ function player_movement()
 				// Set horizontal and vertical speeds based
 				// on the difference between the current mouse
 				// poisition and the anchor position.
-				hspeed = device_mouse_x_to_gui(0) - global.mouse_anchor_x;
-				vspeed = device_mouse_y_to_gui(0) - global.mouse_anchor_y;
+				hspeed = (device_mouse_x_to_gui(0) - global.mouse_anchor_x) * 0.1;
+				vspeed = (device_mouse_y_to_gui(0) - global.mouse_anchor_y) * 0.1;
 			}
 		}
 	}
