@@ -98,6 +98,66 @@ function player_movement()
 	/// @DnDParent : 0E475938
 	else
 	{
+		/// @DnDAction : YoYo Games.Common.Temp_Variable
+		/// @DnDVersion : 1
+		/// @DnDHash : 463C6C2D
+		/// @DnDComment : // Stores how many gamepad count
+		/// @DnDParent : 208E5356
+		/// @DnDArgument : "var" "_max_pads"
+		/// @DnDArgument : "value" "gamepad_get_device_count()"
+		var _max_pads = gamepad_get_device_count();
+	
+		/// @DnDAction : YoYo Games.Common.If_Variable
+		/// @DnDVersion : 1
+		/// @DnDHash : 4213AF36
+		/// @DnDComment : // Checks when at least 1 gamepad is present
+		/// @DnDParent : 208E5356
+		/// @DnDArgument : "var" "_max_pads"
+		/// @DnDArgument : "op" "2"
+		if(_max_pads > 0)
+		{
+			/// @DnDAction : YoYo Games.Common.If_Expression
+			/// @DnDVersion : 1
+			/// @DnDHash : 737E6E33
+			/// @DnDComment : // Checks the gamepad is connected
+			/// @DnDParent : 4213AF36
+			/// @DnDArgument : "expr" "gamepad_is_connected(0)"
+			if(gamepad_is_connected(0))
+			{
+				/// @DnDAction : YoYo Games.Gamepad.Set_Gamepad_Axis_Deadzone
+				/// @DnDVersion : 1
+				/// @DnDHash : 1836B039
+				/// @DnDComment : // Sets the gamepads deadzone
+				/// @DnDParent : 737E6E33
+				/// @DnDArgument : "deadzone" "0.1"
+				gamepad_set_axis_deadzone(0, 0.1);
+			
+				/// @DnDAction : YoYo Games.Common.If_Expression
+				/// @DnDVersion : 1
+				/// @DnDHash : 2520829C
+				/// @DnDComment : // Checks if the gamepads right stick is moved
+				/// @DnDParent : 737E6E33
+				/// @DnDArgument : "expr" "gamepad_axis_value(0, gp_axislv) != 0 || gamepad_axis_value(0, gp_axislh) != 0"
+				if(gamepad_axis_value(0, gp_axislv) != 0 || gamepad_axis_value(0, gp_axislh) != 0)
+				{
+					/// @DnDAction : YoYo Games.Common.Variable
+					/// @DnDVersion : 1
+					/// @DnDHash : 6A542F6A
+					/// @DnDComment : // Adds movement speed to player based on left stick input
+					/// @DnDInput : 2
+					/// @DnDParent : 2520829C
+					/// @DnDArgument : "expr" "10 * gamepad_axis_value(0, gp_axislv)"
+					/// @DnDArgument : "expr_relative" "1"
+					/// @DnDArgument : "expr_1" "10 * gamepad_axis_value(0, gp_axislh)"
+					/// @DnDArgument : "expr_relative_1" "1"
+					/// @DnDArgument : "var" "vspeed"
+					/// @DnDArgument : "var_1" "hspeed"
+					vspeed += 10 * gamepad_axis_value(0, gp_axislv);
+					hspeed += 10 * gamepad_axis_value(0, gp_axislh);
+				}
+			}
+		}
+	
 		/// @DnDAction : YoYo Games.Mouse & Keyboard.If_Key_Down
 		/// @DnDVersion : 1
 		/// @DnDHash : 122ACD6C

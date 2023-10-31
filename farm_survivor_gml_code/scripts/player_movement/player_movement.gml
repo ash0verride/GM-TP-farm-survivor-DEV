@@ -38,6 +38,27 @@ function player_movement()
 	// If left mouse button is NOT held down...
 	else
 	{
+		// Stores how many gamepad count
+		var _max_pads = gamepad_get_device_count();
+
+		if (_max_pads > 0)
+		{
+			// Checks the gamepad is connected
+			if (gamepad_is_connected(0))
+			{
+				// Sets the gamepads deadzone
+			    gamepad_set_axis_deadzone(0, 0.1);
+				
+				// Checks if the gamepads right stick is moved
+				if (gamepad_axis_value(0, gp_axislv) != 0 || gamepad_axis_value(0, gp_axislh) != 0)
+				{
+					// Adds movement speed to player based on left stick input
+					vspeed += 10 * gamepad_axis_value(0, gp_axislv);
+					hspeed += 10 * gamepad_axis_value(0, gp_axislh);
+				}
+			}
+		}
+		
 		// If the W key is down...
 		if (keyboard_check(ord("W")))
 		{
