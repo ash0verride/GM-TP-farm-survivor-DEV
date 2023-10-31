@@ -13,3 +13,5 @@ vspeed += -2;
 // Set the depth the a high negative value,
 // drawing it in front of everything else.
 depth = -10000;
+
+image_alpha = 1;

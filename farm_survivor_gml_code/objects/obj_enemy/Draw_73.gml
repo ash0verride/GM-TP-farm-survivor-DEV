@@ -1,6 +1,11 @@
+if (!global.paused)
+{
+	show_healthbar--;	
+}
+
 // If our healthbar timer is over 0...
 // (note that we also decrement it with --)
-if(show_healthbar-- > 0)
+if(show_healthbar > 0)
 {
 	// Draw the back of the healthbar.
 	draw_sprite_ext(spr_healthbar_back, 0, x + -50, y + 5, 100 / 29, 26 / 26, 0, c_white, 1);
