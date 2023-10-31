@@ -14,6 +14,80 @@ if(!(instance_exists(obj_pause_screen)) && !(instance_exists(obj_upgrade_screen)
 {
 	/// @DnDAction : YoYo Games.Common.If_Expression
 	/// @DnDVersion : 1
+	/// @DnDHash : 78C80C48
+	/// @DnDParent : 5DB9E288
+	/// @DnDArgument : "expr" "has_released && keyboard_check(vk_escape)"
+	if(has_released && keyboard_check(vk_escape))
+	{
+		/// @DnDAction : YoYo Games.Audio.Play_Audio
+		/// @DnDVersion : 1.1
+		/// @DnDHash : 44A863C0
+		/// @DnDParent : 78C80C48
+		/// @DnDArgument : "soundid" "snd_ui_select"
+		/// @DnDSaveInfo : "soundid" "snd_ui_select"
+		audio_play_sound(snd_ui_select, 0, 0, 1.0, undefined, 1.0);
+	
+		/// @DnDAction : YoYo Games.Instances.Create_Instance
+		/// @DnDVersion : 1
+		/// @DnDHash : 5F076E5C
+		/// @DnDComment : Create pause screen.
+		/// @DnDParent : 78C80C48
+		/// @DnDArgument : "xpos" "1920 / 2"
+		/// @DnDArgument : "ypos" "1080 / 2"
+		/// @DnDArgument : "objectid" "obj_pause_screen"
+		/// @DnDArgument : "layer" ""UpgradeScreen""
+		/// @DnDSaveInfo : "objectid" "obj_pause_screen"
+		instance_create_layer(1920 / 2, 1080 / 2, "UpgradeScreen", obj_pause_screen);
+	
+		/// @DnDAction : YoYo Games.Common.Function_Call
+		/// @DnDVersion : 1
+		/// @DnDHash : 7B3E6B88
+		/// @DnDComment : Call the pause function.
+		/// @DnDParent : 78C80C48
+		/// @DnDArgument : "function" "pause"
+		pause();
+	
+		/// @DnDAction : YoYo Games.Common.Variable
+		/// @DnDVersion : 1
+		/// @DnDHash : 490F6039
+		/// @DnDParent : 78C80C48
+		/// @DnDArgument : "expr" "false"
+		/// @DnDArgument : "var" "has_released"
+		has_released = false;
+	
+		/// @DnDAction : YoYo Games.Common.Exit_Event
+		/// @DnDVersion : 1
+		/// @DnDHash : 1B2F449D
+		/// @DnDParent : 78C80C48
+		exit;
+	}
+
+	/// @DnDAction : YoYo Games.Common.Else
+	/// @DnDVersion : 1
+	/// @DnDHash : 33AC5238
+	/// @DnDParent : 5DB9E288
+	else
+	{
+		/// @DnDAction : YoYo Games.Common.If_Expression
+		/// @DnDVersion : 1
+		/// @DnDHash : 03219A97
+		/// @DnDParent : 33AC5238
+		/// @DnDArgument : "expr" "keyboard_check(vk_escape)"
+		/// @DnDArgument : "not" "1"
+		if(!(keyboard_check(vk_escape)))
+		{
+			/// @DnDAction : YoYo Games.Common.Variable
+			/// @DnDVersion : 1
+			/// @DnDHash : 75ACC106
+			/// @DnDParent : 03219A97
+			/// @DnDArgument : "expr" "true"
+			/// @DnDArgument : "var" "has_released"
+			has_released = true;
+		}
+	}
+
+	/// @DnDAction : YoYo Games.Common.If_Expression
+	/// @DnDVersion : 1
 	/// @DnDHash : 0E95FC62
 	/// @DnDComment : If mouse is over this instance, adjusting for the GUI layer...
 	/// @DnDInput : 4

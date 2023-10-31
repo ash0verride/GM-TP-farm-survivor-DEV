@@ -25,3 +25,23 @@ if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right
 		}
 	}
 }
+
+if (has_released && keyboard_check(vk_escape))
+{
+	audio_play_sound(snd_ui_select, 0, 0, 1.0, undefined, 1.0);
+	
+	with(obj_pause_screen) instance_destroy();
+	
+	with(obj_button_exit) instance_destroy();
+	
+	with(obj_button_resume) instance_destroy();
+		
+	exit;
+}
+else
+{
+	if (!keyboard_check(vk_escape))
+	{
+		has_released = true;	
+	}
+}
