@@ -41,6 +41,7 @@ function player_movement()
 		// Stores how many gamepad count
 		var _max_pads = gamepad_get_device_count();
 
+		// Checks when at least 1 gamepad is present
 		if (_max_pads > 0)
 		{
 			// Checks the gamepad is connected
