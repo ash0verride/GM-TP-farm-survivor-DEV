@@ -113,6 +113,14 @@ function get_upgrades()
 	
 		/// @DnDAction : YoYo Games.Common.Variable
 		/// @DnDVersion : 1
+		/// @DnDHash : 24DD75E0
+		/// @DnDParent : 14382F38
+		/// @DnDArgument : "expr" "0.5 + 0.25 *_index"
+		/// @DnDArgument : "var" "_upgrade.roll_life"
+		_upgrade.roll_life = 0.5 + 0.25 *_index;
+	
+		/// @DnDAction : YoYo Games.Common.Variable
+		/// @DnDVersion : 1
 		/// @DnDHash : 648F7C3F
 		/// @DnDComment : Set the upgrade data to the upgrade card object.
 		/// @DnDParent : 14382F38

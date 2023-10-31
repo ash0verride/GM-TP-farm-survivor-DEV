@@ -32,3 +32,13 @@ global.is_mouse = false;
 /// @DnDArgument : "expr" "false"
 /// @DnDArgument : "var" "gamepad_bypass"
 gamepad_bypass = false;
+
+/// @DnDAction : YoYo Games.Common.Variable
+/// @DnDVersion : 1
+/// @DnDHash : 5599B136
+/// @DnDInput : 2
+/// @DnDArgument : "expr_1" "1"
+/// @DnDArgument : "var" "roll_life"
+/// @DnDArgument : "var_1" "roll_alpha"
+roll_life = 0;
+roll_alpha = 1;

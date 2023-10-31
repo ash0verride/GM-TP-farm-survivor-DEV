@@ -104,3 +104,23 @@ draw_text(x + 0, y + +40, string(upgrade_data[? "description"]) + "");
 /// @DnDArgument : "y_relative" "1"
 /// @DnDArgument : "sprite" "upgrade_data[? "icon"]"
 draw_sprite(upgrade_data[? "icon"], 0, x + 0, y + -200);
+
+/// @DnDAction : YoYo Games.Drawing.Set_Alpha
+/// @DnDVersion : 1
+/// @DnDHash : 062DE59A
+/// @DnDArgument : "alpha" "roll_alpha"
+draw_set_alpha(roll_alpha);
+
+/// @DnDAction : YoYo Games.Drawing.Draw_Sprite
+/// @DnDVersion : 1
+/// @DnDHash : 6F3D916A
+/// @DnDArgument : "x_relative" "1"
+/// @DnDArgument : "y_relative" "1"
+/// @DnDArgument : "sprite" "spr_card_glow"
+/// @DnDSaveInfo : "sprite" "spr_card_glow"
+draw_sprite(spr_card_glow, 0, x + 0, y + 0);
+
+/// @DnDAction : YoYo Games.Drawing.Set_Alpha
+/// @DnDVersion : 1
+/// @DnDHash : 60858F02
+draw_set_alpha(1);
