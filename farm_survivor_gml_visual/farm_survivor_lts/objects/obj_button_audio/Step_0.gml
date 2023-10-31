@@ -74,3 +74,64 @@ if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right
 		}
 	}
 }
+
+/// @DnDAction : YoYo Games.Common.Temp_Variable
+/// @DnDVersion : 1
+/// @DnDHash : 302D5922
+/// @DnDComment : // Stores how many gamepad count
+/// @DnDArgument : "var" "_max_pads"
+/// @DnDArgument : "value" "gamepad_get_device_count()"
+var _max_pads = gamepad_get_device_count();
+
+/// @DnDAction : YoYo Games.Common.If_Variable
+/// @DnDVersion : 1
+/// @DnDHash : 2ADB7DCB
+/// @DnDComment : // Checks when at least 1 gamepad is present
+/// @DnDArgument : "var" "_max_pads"
+/// @DnDArgument : "op" "2"
+if(_max_pads > 0)
+{
+	/// @DnDAction : YoYo Games.Common.If_Expression
+	/// @DnDVersion : 1
+	/// @DnDHash : 0239D7F9
+	/// @DnDComment : // Checks the gamepad is connected
+	/// @DnDParent : 2ADB7DCB
+	/// @DnDArgument : "expr" "gamepad_is_connected(0)"
+	if(gamepad_is_connected(0))
+	{
+		/// @DnDAction : YoYo Games.Gamepad.If_Gamepad_Button_Pressed
+		/// @DnDVersion : 1.1
+		/// @DnDHash : 12FEE2D1
+		/// @DnDParent : 0239D7F9
+		var l12FEE2D1_0 = 0;
+		var l12FEE2D1_1 = gp_face4;
+		if(gamepad_is_connected(l12FEE2D1_0) && gamepad_button_check_pressed(l12FEE2D1_0, l12FEE2D1_1))
+		{
+			/// @DnDAction : YoYo Games.Audio.Play_Audio
+			/// @DnDVersion : 1.1
+			/// @DnDHash : 31F8E57C
+			/// @DnDComment : Play click sound effect.
+			/// @DnDParent : 12FEE2D1
+			/// @DnDArgument : "soundid" "snd_click"
+			/// @DnDSaveInfo : "soundid" "snd_click"
+			audio_play_sound(snd_click, 0, 0, 1.0, undefined, 1.0);
+		
+			/// @DnDAction : YoYo Games.Audio.Audio_Get_Master_Volume
+			/// @DnDVersion : 1
+			/// @DnDHash : 4059D581
+			/// @DnDComment : Get current volume.
+			/// @DnDParent : 12FEE2D1
+			/// @DnDArgument : "var" "_volume"
+			/// @DnDArgument : "var_temp" "1"
+			var _volume = audio_get_master_gain(0);
+		
+			/// @DnDAction : YoYo Games.Audio.Audo_Set_Master_Volume
+			/// @DnDVersion : 1
+			/// @DnDHash : 0E396620
+			/// @DnDComment : Toggle volume on/off.
+			/// @DnDParent : 12FEE2D1
+			/// @DnDArgument : "volume" "!_volume"
+			audio_set_master_gain(0, !_volume);
+		}
+	}
+}

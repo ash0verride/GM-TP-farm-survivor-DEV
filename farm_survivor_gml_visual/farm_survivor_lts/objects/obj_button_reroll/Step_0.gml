@@ -73,4 +73,59 @@ if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right
 			instance_destroy();
 		}
 	}
+
+	/// @DnDAction : YoYo Games.Common.Temp_Variable
+	/// @DnDVersion : 1
+	/// @DnDHash : 26F33619
+	/// @DnDParent : 0E95FC62
+	/// @DnDArgument : "var" "_max_pads"
+	/// @DnDArgument : "value" "gamepad_get_device_count()"
+	var _max_pads = gamepad_get_device_count();
+
+	/// @DnDAction : YoYo Games.Common.If_Variable
+	/// @DnDVersion : 1
+	/// @DnDHash : 0E253B46
+	/// @DnDParent : 0E95FC62
+	/// @DnDArgument : "var" "_max_pads"
+	/// @DnDArgument : "op" "2"
+	if(_max_pads > 0)
+	{
+		/// @DnDAction : YoYo Games.Common.If_Expression
+		/// @DnDVersion : 1
+		/// @DnDHash : 76E7B708
+		/// @DnDParent : 0E253B46
+		/// @DnDArgument : "expr" "gamepad_is_connected(0)"
+		if(gamepad_is_connected(0))
+		{
+			/// @DnDAction : YoYo Games.Gamepad.If_Gamepad_Button_Pressed
+			/// @DnDVersion : 1.1
+			/// @DnDHash : 7F763734
+			/// @DnDParent : 76E7B708
+			var l7F763734_0 = 0;
+			var l7F763734_1 = gp_face4;
+			if(gamepad_is_connected(l7F763734_0) && gamepad_button_check_pressed(l7F763734_0, l7F763734_1))
+			{
+				/// @DnDAction : YoYo Games.Audio.Play_Audio
+				/// @DnDVersion : 1.1
+				/// @DnDHash : 6101A8DB
+				/// @DnDParent : 7F763734
+				/// @DnDArgument : "soundid" "snd_ui_select"
+				/// @DnDSaveInfo : "soundid" "snd_ui_select"
+				audio_play_sound(snd_ui_select, 0, 0, 1.0, undefined, 1.0);
+			
+				/// @DnDAction : YoYo Games.Common.Function_Call
+				/// @DnDVersion : 1
+				/// @DnDHash : 31BA6B89
+				/// @DnDParent : 7F763734
+				/// @DnDArgument : "function" "get_upgrades"
+				get_upgrades();
+			
+				/// @DnDAction : YoYo Games.Instances.Destroy_Instance
+				/// @DnDVersion : 1
+				/// @DnDHash : 4520EB98
+				/// @DnDParent : 7F763734
+				instance_destroy();
+			}
+		}
+	}
 }

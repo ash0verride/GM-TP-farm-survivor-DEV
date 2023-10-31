@@ -85,6 +85,77 @@ if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right
 	}
 }
 
+/// @DnDAction : YoYo Games.Common.Temp_Variable
+/// @DnDVersion : 1
+/// @DnDHash : 2A8C7466
+/// @DnDComment : // Stores how many gamepad count
+/// @DnDArgument : "var" "_max_pads"
+/// @DnDArgument : "value" "gamepad_get_device_count()"
+var _max_pads = gamepad_get_device_count();
+
+/// @DnDAction : YoYo Games.Common.If_Variable
+/// @DnDVersion : 1
+/// @DnDHash : 695C62FA
+/// @DnDComment : // Checks when at least 1 gamepad is present
+/// @DnDArgument : "var" "_max_pads"
+/// @DnDArgument : "op" "2"
+if(_max_pads > 0)
+{
+	/// @DnDAction : YoYo Games.Common.If_Expression
+	/// @DnDVersion : 1
+	/// @DnDHash : 77BF89F5
+	/// @DnDComment : // Checks the gamepad is connected
+	/// @DnDParent : 695C62FA
+	/// @DnDArgument : "expr" "gamepad_is_connected(0)"
+	if(gamepad_is_connected(0))
+	{
+		/// @DnDAction : YoYo Games.Gamepad.If_Gamepad_Button_Pressed
+		/// @DnDVersion : 1.1
+		/// @DnDHash : 23D6CE7F
+		/// @DnDParent : 77BF89F5
+		/// @DnDArgument : "btn" "gp_start"
+		var l23D6CE7F_0 = 0;
+		var l23D6CE7F_1 = gp_start;
+		if(gamepad_is_connected(l23D6CE7F_0) && gamepad_button_check_pressed(l23D6CE7F_0, l23D6CE7F_1))
+		{
+			/// @DnDAction : YoYo Games.Audio.Play_Audio
+			/// @DnDVersion : 1.1
+			/// @DnDHash : 1DEFBA54
+			/// @DnDParent : 23D6CE7F
+			/// @DnDArgument : "soundid" "snd_ui_select"
+			/// @DnDSaveInfo : "soundid" "snd_ui_select"
+			audio_play_sound(snd_ui_select, 0, 0, 1.0, undefined, 1.0);
+		
+			/// @DnDAction : YoYo Games.Instances.Destroy_Instance
+			/// @DnDVersion : 1
+			/// @DnDHash : 4160984A
+			/// @DnDApplyTo : obj_pause_screen
+			/// @DnDParent : 23D6CE7F
+			with(obj_pause_screen) instance_destroy();
+		
+			/// @DnDAction : YoYo Games.Instances.Destroy_Instance
+			/// @DnDVersion : 1
+			/// @DnDHash : 4CD10311
+			/// @DnDApplyTo : obj_button_exit
+			/// @DnDParent : 23D6CE7F
+			with(obj_button_exit) instance_destroy();
+		
+			/// @DnDAction : YoYo Games.Instances.Destroy_Instance
+			/// @DnDVersion : 1
+			/// @DnDHash : 06420858
+			/// @DnDApplyTo : obj_button_resume
+			/// @DnDParent : 23D6CE7F
+			with(obj_button_resume) instance_destroy();
+		
+			/// @DnDAction : YoYo Games.Common.Exit_Event
+			/// @DnDVersion : 1
+			/// @DnDHash : 5964D6CE
+			/// @DnDParent : 23D6CE7F
+			exit;
+		}
+	}
+}
+
 /// @DnDAction : YoYo Games.Common.If_Expression
 /// @DnDVersion : 1
 /// @DnDHash : 2EE04AB6

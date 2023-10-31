@@ -18,3 +18,17 @@ mouse_over = false;
 /// @DnDArgument : "expr" "false"
 /// @DnDArgument : "var" "is_clicked"
 is_clicked = false;
+
+/// @DnDAction : YoYo Games.Common.Variable
+/// @DnDVersion : 1
+/// @DnDHash : 6DAFD5EE
+/// @DnDArgument : "expr" "false"
+/// @DnDArgument : "var" "global.is_mouse"
+global.is_mouse = false;
+
+/// @DnDAction : YoYo Games.Common.Variable
+/// @DnDVersion : 1
+/// @DnDHash : 5227F0BE
+/// @DnDArgument : "expr" "false"
+/// @DnDArgument : "var" "gamepad_bypass"
+gamepad_bypass = false;

@@ -64,3 +64,46 @@ if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right
 		}
 	}
 }
+
+/// @DnDAction : YoYo Games.Common.Temp_Variable
+/// @DnDVersion : 1
+/// @DnDHash : 054B7B09
+/// @DnDComment : // Stores how many gamepad count
+/// @DnDArgument : "var" "_max_pads"
+/// @DnDArgument : "value" "gamepad_get_device_count()"
+var _max_pads = gamepad_get_device_count();
+
+/// @DnDAction : YoYo Games.Common.If_Variable
+/// @DnDVersion : 1
+/// @DnDHash : 17D7D7E9
+/// @DnDComment : // Checks when at least 1 gamepad is present
+/// @DnDArgument : "var" "_max_pads"
+/// @DnDArgument : "op" "2"
+if(_max_pads > 0)
+{
+	/// @DnDAction : YoYo Games.Common.If_Expression
+	/// @DnDVersion : 1
+	/// @DnDHash : 194771C6
+	/// @DnDComment : // Checks the gamepad is connected
+	/// @DnDParent : 17D7D7E9
+	/// @DnDArgument : "expr" "gamepad_is_connected(0)"
+	if(gamepad_is_connected(0))
+	{
+		/// @DnDAction : YoYo Games.Gamepad.If_Gamepad_Button_Pressed
+		/// @DnDVersion : 1.1
+		/// @DnDHash : 0406BA4B
+		/// @DnDParent : 194771C6
+		/// @DnDArgument : "btn" "gp_select"
+		var l0406BA4B_0 = 0;
+		var l0406BA4B_1 = gp_select;
+		if(gamepad_is_connected(l0406BA4B_0) && gamepad_button_check_pressed(l0406BA4B_0, l0406BA4B_1))
+		{
+			/// @DnDAction : YoYo Games.Game.End_Game
+			/// @DnDVersion : 1
+			/// @DnDHash : 2893580D
+			/// @DnDComment : // Closes the game
+			/// @DnDParent : 0406BA4B
+			game_end();
+		}
+	}
+}

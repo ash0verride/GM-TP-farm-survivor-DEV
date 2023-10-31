@@ -26,6 +26,30 @@ if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right
 	}
 }
 
+// Stores how many gamepad count
+var _max_pads = gamepad_get_device_count();
+
+// Checks when at least 1 gamepad is present
+if (_max_pads > 0)
+{
+	// Checks the gamepad is connected
+	if (gamepad_is_connected(0))
+	{
+		if (gamepad_button_check_pressed(0, gp_start))
+		{
+			audio_play_sound(snd_ui_select, 0, 0, 1.0, undefined, 1.0);
+	
+			with(obj_pause_screen) instance_destroy();
+	
+			with(obj_button_exit) instance_destroy();
+	
+			with(obj_button_resume) instance_destroy();
+		
+			exit;
+		}
+	}
+}
+
 if (has_released && keyboard_check(vk_escape))
 {
 	audio_play_sound(snd_ui_select, 0, 0, 1.0, undefined, 1.0);

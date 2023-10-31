@@ -15,3 +15,10 @@ if (l3C752ECA_0)
 	/// @DnDArgument : "var" "is_clicked"
 	is_clicked = false;
 }
+
+/// @DnDAction : YoYo Games.Common.Variable
+/// @DnDVersion : 1
+/// @DnDHash : 0A75AB1E
+/// @DnDArgument : "expr" "false"
+/// @DnDArgument : "var" "gamepad_bypass"
+gamepad_bypass = false;
