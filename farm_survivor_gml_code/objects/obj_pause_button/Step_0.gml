@@ -10,8 +10,10 @@ if(!instance_exists(obj_pause_screen) && !instance_exists(obj_upgrade_screen) &&
 		// Checks the gamepad is connected
 		if (gamepad_is_connected(0))
 		{
+			// Checks if gamepad button has been pressed
 			if (gamepad_button_check_pressed(0, gp_start))
 			{
+				// Play click sound effect.
 				audio_play_sound(snd_ui_select, 0, 0, 1.0, undefined, 1.0);
 		
 				// Create pause screen.
@@ -19,14 +21,14 @@ if(!instance_exists(obj_pause_screen) && !instance_exists(obj_upgrade_screen) &&
 		
 				// Call the pause function.
 				pause();
-				
-				exit;
 			}
 		}
 	}
 	
+	// Checks if the escape key has been released and the ecape key is now down
 	if (has_released && keyboard_check(vk_escape))
 	{
+		// Play click sound effect.
 		audio_play_sound(snd_ui_select, 0, 0, 1.0, undefined, 1.0);
 		
 		// Create pause screen.
@@ -36,8 +38,6 @@ if(!instance_exists(obj_pause_screen) && !instance_exists(obj_upgrade_screen) &&
 		pause();
 		
 		has_released = false;
-		
-		exit;
 	}
 	else
 	{

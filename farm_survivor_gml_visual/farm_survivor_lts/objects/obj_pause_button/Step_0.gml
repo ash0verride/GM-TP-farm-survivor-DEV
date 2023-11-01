@@ -1,6 +1,7 @@
 /// @DnDAction : YoYo Games.Common.If_Expression
 /// @DnDVersion : 1
 /// @DnDHash : 5DB9E288
+/// @DnDComment : // Checks no menus are showing
 /// @DnDInput : 4
 /// @DnDArgument : "expr" "instance_exists(obj_pause_screen)"
 /// @DnDArgument : "not" "1"
@@ -41,6 +42,7 @@ if(!(instance_exists(obj_pause_screen)) && !(instance_exists(obj_upgrade_screen)
 			/// @DnDAction : YoYo Games.Gamepad.If_Gamepad_Button_Pressed
 			/// @DnDVersion : 1.1
 			/// @DnDHash : 69904264
+			/// @DnDComment : // Checks if gamepad button has been pressed
 			/// @DnDParent : 2AF229C3
 			/// @DnDArgument : "btn" "gp_start"
 			var l69904264_0 = 0;
@@ -50,6 +52,7 @@ if(!(instance_exists(obj_pause_screen)) && !(instance_exists(obj_upgrade_screen)
 				/// @DnDAction : YoYo Games.Audio.Play_Audio
 				/// @DnDVersion : 1.1
 				/// @DnDHash : 55F337AE
+				/// @DnDComment : // Play click sound effect.
 				/// @DnDParent : 69904264
 				/// @DnDArgument : "soundid" "snd_ui_select"
 				/// @DnDSaveInfo : "soundid" "snd_ui_select"
@@ -58,7 +61,7 @@ if(!(instance_exists(obj_pause_screen)) && !(instance_exists(obj_upgrade_screen)
 				/// @DnDAction : YoYo Games.Instances.Create_Instance
 				/// @DnDVersion : 1
 				/// @DnDHash : 6EAF2BF8
-				/// @DnDComment : Create pause screen.
+				/// @DnDComment : // Create pause screen.
 				/// @DnDParent : 69904264
 				/// @DnDArgument : "xpos" "1920 / 2"
 				/// @DnDArgument : "ypos" "1080 / 2"
@@ -70,7 +73,7 @@ if(!(instance_exists(obj_pause_screen)) && !(instance_exists(obj_upgrade_screen)
 				/// @DnDAction : YoYo Games.Common.Function_Call
 				/// @DnDVersion : 1
 				/// @DnDHash : 5472D7FE
-				/// @DnDComment : Call the pause function.
+				/// @DnDComment : // Call the pause function.
 				/// @DnDParent : 69904264
 				/// @DnDArgument : "function" "pause"
 				pause();
@@ -82,12 +85,6 @@ if(!(instance_exists(obj_pause_screen)) && !(instance_exists(obj_upgrade_screen)
 				/// @DnDArgument : "expr" "false"
 				/// @DnDArgument : "var" "has_released"
 				has_released = false;
-			
-				/// @DnDAction : YoYo Games.Common.Exit_Event
-				/// @DnDVersion : 1
-				/// @DnDHash : 523F65D2
-				/// @DnDParent : 69904264
-				exit;
 			}
 		}
 	}
@@ -95,6 +92,7 @@ if(!(instance_exists(obj_pause_screen)) && !(instance_exists(obj_upgrade_screen)
 	/// @DnDAction : YoYo Games.Common.If_Expression
 	/// @DnDVersion : 1
 	/// @DnDHash : 78C80C48
+	/// @DnDComment : // Checks if the escape key has been released and the ecape key is now down
 	/// @DnDParent : 5DB9E288
 	/// @DnDArgument : "expr" "has_released && keyboard_check(vk_escape)"
 	if(has_released && keyboard_check(vk_escape))
