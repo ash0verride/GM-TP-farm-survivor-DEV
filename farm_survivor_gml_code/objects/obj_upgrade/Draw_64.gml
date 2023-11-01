@@ -34,7 +34,7 @@ draw_sprite(upgrade_data[? "icon"], 0, x + 0, y + -200);
 draw_set_alpha(roll_alpha);
 
 // Draw Sprite
-draw_sprite(spr_upgrade_hide_black, 0, x, y);
+draw_sprite(spr_upgrade_hide, 0, x, y);
 
 // Set Draw Alpha
 draw_set_alpha(1);
