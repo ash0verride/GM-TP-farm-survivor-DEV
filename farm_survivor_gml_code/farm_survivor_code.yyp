@@ -19,6 +19,7 @@
     {"id":{"name":"obj_rooster","path":"objects/obj_rooster/obj_rooster.yy",},"order":3,},
     {"id":{"name":"obj_hero_trail","path":"objects/obj_hero_trail/obj_hero_trail.yy",},"order":2,},
     {"id":{"name":"spr_button_small","path":"sprites/spr_button_small/spr_button_small.yy",},"order":22,},
+    {"id":{"name":"spr_upgrade_hide","path":"sprites/spr_upgrade_hide/spr_upgrade_hide.yy",},"order":26,},
     {"id":{"name":"obj_button_retry","path":"objects/obj_button_retry/obj_button_retry.yy",},"order":2,},
     {"id":{"name":"shooting_attack","path":"scripts/shooting_attack/shooting_attack.yy",},"order":1,},
     {"id":{"name":"spr_rooster_hit","path":"sprites/spr_rooster_hit/spr_rooster_hit.yy",},"order":1,},

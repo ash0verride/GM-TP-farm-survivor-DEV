@@ -29,3 +29,12 @@ draw_set_font(fnt_card_description);
 draw_text(x + 0, y + +40, string(upgrade_data[? "description"]) + "");
 
 draw_sprite(upgrade_data[? "icon"], 0, x + 0, y + -200);
+
+// Set Draw Alpha
+draw_set_alpha(roll_alpha);
+
+// Draw Sprite
+draw_sprite(spr_upgrade_hide_black, 0, x, y);
+
+// Set Draw Alpha
+draw_set_alpha(1);

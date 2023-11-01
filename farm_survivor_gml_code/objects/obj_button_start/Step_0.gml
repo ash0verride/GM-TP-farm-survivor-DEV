@@ -1,5 +1,7 @@
 if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right && device_mouse_y_to_gui(0) > bbox_top && device_mouse_y_to_gui(0) < bbox_bottom)
 {
+	target_scale = 0.9;
+	
 	if (mouse_check_button_pressed(mb_left))
 	{
 		audio_play_sound(snd_click, 0, 0, 1.0, undefined, 1.0);
@@ -11,6 +13,8 @@ if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right
 	// Checks if mouse has been clicked on this button
 	if (is_clicked)
 	{
+		
+		
 		if ( mouse_check_button_released(mb_left))
 		{
 			audio_play_sound(snd_ui_select, 0, 0, 1.0, undefined, 1.0);
@@ -18,6 +22,10 @@ if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right
 			room_goto(rm_game);
 		}
 	}
+}
+else
+{
+	target_scale = 1.0;	
 }
 
 // Stores how many gamepad count
@@ -39,3 +47,6 @@ if (_max_pads > 0)
 		}
 	}
 }
+
+image_xscale = lerp(image_xscale, target_scale, 0.9);
+image_yscale = lerp(image_yscale, target_scale, 0.9);

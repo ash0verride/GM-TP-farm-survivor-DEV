@@ -116,9 +116,9 @@ draw_set_alpha(roll_alpha);
 /// @DnDHash : 6F3D916A
 /// @DnDArgument : "x_relative" "1"
 /// @DnDArgument : "y_relative" "1"
-/// @DnDArgument : "sprite" "spr_card_glow"
-/// @DnDSaveInfo : "sprite" "spr_card_glow"
-draw_sprite(spr_card_glow, 0, x + 0, y + 0);
+/// @DnDArgument : "sprite" "spr_upgrade_hide"
+/// @DnDSaveInfo : "sprite" "spr_upgrade_hide"
+draw_sprite(spr_upgrade_hide, 0, x + 0, y + 0);
 
 /// @DnDAction : YoYo Games.Drawing.Set_Alpha
 /// @DnDVersion : 1

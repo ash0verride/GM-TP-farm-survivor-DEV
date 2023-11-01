@@ -108,6 +108,7 @@
     {"id":{"name":"spr_collectible_heart","path":"sprites/spr_collectible_heart/spr_collectible_heart.yy",},"order":1,},
     {"id":{"name":"obj_button_audio","path":"objects/obj_button_audio/obj_button_audio.yy",},"order":2,},
     {"id":{"name":"fnt_medium","path":"fonts/fnt_medium/fnt_medium.yy",},"order":1,},
+    {"id":{"name":"spr_upgrade_hide","path":"sprites/spr_upgrade_hide/spr_upgrade_hide.yy",},"order":26,},
     {"id":{"name":"fnt_card_description","path":"fonts/fnt_card_description/fnt_card_description.yy",},"order":3,},
     {"id":{"name":"spr_rooster_attack","path":"sprites/spr_rooster_attack/spr_rooster_attack.yy",},"order":2,},
     {"id":{"name":"spr_hero_hit","path":"sprites/spr_hero_hit/spr_hero_hit.yy",},"order":0,},

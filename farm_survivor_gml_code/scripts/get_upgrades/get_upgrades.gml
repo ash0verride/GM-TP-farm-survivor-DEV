@@ -36,6 +36,8 @@ function get_upgrades()
 	
 		// Create a new upgrade card object.
 		var _upgrade = instance_create_layer(1920 / 2 + _x, 1080 / 2, "UpgradeScreen", obj_upgrade);
+		
+		_upgrade.roll_life = 0.5 + 0.25 * _index;
 	
 		// Set the upgrade data to the upgrade card object.
 		_upgrade.upgrade_data = _upgrade_data;

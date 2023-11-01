@@ -56,6 +56,14 @@ if (_max_pads > 0)
 			gamepad_bypass = true;
 		}
 	}
+	else
+	{
+		global.is_mouse = true;	
+	}
+}
+else
+{
+	global.is_mouse = true;	
 }
 
 // If the mouse is over this card...
@@ -64,6 +72,18 @@ if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right
 	// Set mouse_over to true, to enable
 	// the purple glow.
 	mouse_over = true;
+}
+
+if (roll_alpha >= 0)
+{
+	mouse_over = false;
+	
+	roll_life -= delta_time * 0.000001;
+	
+	if (roll_life <= 0)
+	{
+		roll_alpha -= delta_time * 0.000001 * 2;
+	}
 }
 
 if (mouse_over)
