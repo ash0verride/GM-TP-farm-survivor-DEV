@@ -1,16 +1,16 @@
-// Checks no menus are showing
-if(!instance_exists(obj_pause_screen) && !instance_exists(obj_upgrade_screen) && !instance_exists(obj_game_over) && !instance_exists(obj_template_complete))
+// Checks no menus are showing.
+if (!instance_exists(obj_pause_screen) && !instance_exists(obj_upgrade_screen) && !instance_exists(obj_game_over) && !instance_exists(obj_template_complete))
 {
-	// Stores how many gamepad count
+	// Stores how many gamepad count.
 	var _max_pads = gamepad_get_device_count();
 
-	// Checks when at least 1 gamepad is present
+	// Checks when at least 1 gamepad is present.
 	if (_max_pads > 0)
 	{
-		// Checks the gamepad is connected
+		// Checks the gamepad is connected.
 		if (gamepad_is_connected(0))
 		{
-			// Checks if gamepad button has been pressed
+			// Checks if gamepad button has been pressed.
 			if (gamepad_button_check_pressed(0, gp_start))
 			{
 				// Play click sound effect.
@@ -31,7 +31,7 @@ if(!instance_exists(obj_pause_screen) && !instance_exists(obj_upgrade_screen) &&
 		}
 	}
 	
-	// Checks if the escape key has been released and the ecape key is now down
+	// Checks if the escape key has been released and the ecape key is now down.
 	if (has_released && keyboard_check(vk_escape))
 	{
 		// Play click sound effect.
@@ -62,7 +62,7 @@ if(!instance_exists(obj_pause_screen) && !instance_exists(obj_upgrade_screen) &&
 	// If mouse is over this instance, adjusting for the GUI layer...
 	if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right && device_mouse_y_to_gui(0) > bbox_top && device_mouse_y_to_gui(0) < bbox_bottom)
 	{
-		// Reduce target scale size
+		// Reduce target scale size.
 		target_scale = 0.95;
 		
 		// If left mouse button is pressed...
@@ -71,17 +71,17 @@ if(!instance_exists(obj_pause_screen) && !instance_exists(obj_upgrade_screen) &&
 			// Play click sound effect.
 			audio_play_sound(snd_click, 0, 0, 1.0, undefined, 1.0);
 			
-			// Sets click state to true
+			// Sets click state to true.
 			is_clicked = true;
 			
-			// Reduce target scale size further
+			// Reduce target scale size further.
 			target_scale = 0.9;
 		}
 	
-		// Checks if mouse has been clicked on this button
+		// Checks if mouse has been clicked on this button.
 		if (is_clicked)
 		{
-			// Reduce target scale size further
+			// Reduce target scale size further.
 			target_scale = 0.9;
 			
 			// If left mouse button is released.
@@ -110,7 +110,7 @@ if(!instance_exists(obj_pause_screen) && !instance_exists(obj_upgrade_screen) &&
 		target_scale = 1.0;	
 	}
 	
-	// Lerp scale values to target scale
+	// Lerp scale values to target scale.
 	image_xscale = lerp(image_xscale, target_scale, 0.1);
 	image_yscale = lerp(image_yscale, target_scale, 0.1);
 }

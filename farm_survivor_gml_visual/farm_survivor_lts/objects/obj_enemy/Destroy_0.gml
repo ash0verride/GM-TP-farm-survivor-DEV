@@ -1,7 +1,7 @@
 /// @DnDAction : YoYo Games.Random.Choose
 /// @DnDVersion : 1
 /// @DnDHash : 4ACFBB52
-/// @DnDComment : Seems a bit crazy!$(13_10)$(13_10)But this is an easy way to do drop chances$(13_10)of different items.$(13_10)$(13_10)In this case we have 9 in 10 chance of dropping$(13_10)regular collectibles, and a 1 in 10 chance of$(13_10)dropping a heart.$(13_10)$(13_10)We assign the result to _drop.
+/// @DnDComment : // Easy way to do drop chances$(13_10)// of different items.$(13_10)$(13_10)// In this case we have 9 in 10 chance of dropping$(13_10)// regular collectibles, and a 1 in 10 chance of$(13_10)// dropping a heart.$(13_10)$(13_10)// We assign the result to _drop.
 /// @DnDInput : 10
 /// @DnDArgument : "var" "_drop"
 /// @DnDArgument : "var_temp" "1"
@@ -20,7 +20,7 @@ var _drop = choose(obj_collectible, obj_collectible, obj_collectible, obj_collec
 /// @DnDAction : YoYo Games.Instances.Create_Instance
 /// @DnDVersion : 1
 /// @DnDHash : 0690AF42
-/// @DnDComment : Create the chosen drop.
+/// @DnDComment : // Create the chosen drop.
 /// @DnDArgument : "xpos_relative" "1"
 /// @DnDArgument : "ypos_relative" "1"
 /// @DnDArgument : "objectid" "_drop"

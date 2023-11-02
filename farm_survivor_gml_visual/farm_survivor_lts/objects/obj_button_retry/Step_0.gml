@@ -1,7 +1,7 @@
 /// @DnDAction : YoYo Games.Common.If_Expression
 /// @DnDVersion : 1
 /// @DnDHash : 0E95FC62
-/// @DnDComment : If mouse is over this button (adjusted for GUI layer)...
+/// @DnDComment : // If mouse is over this button (adjusted for GUI layer)...
 /// @DnDInput : 4
 /// @DnDArgument : "expr" "device_mouse_x_to_gui(0) > bbox_left"
 /// @DnDArgument : "expr_1" "device_mouse_x_to_gui(0) < bbox_right"
@@ -58,7 +58,7 @@ if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right
 	/// @DnDAction : YoYo Games.Common.If_Variable
 	/// @DnDVersion : 1
 	/// @DnDHash : 4E7335FE
-	/// @DnDComment : Checks if mouse has been clicked on this button.
+	/// @DnDComment : // Checks if mouse has been clicked on this button.
 	/// @DnDParent : 0E95FC62
 	/// @DnDArgument : "var" "is_clicked"
 	/// @DnDArgument : "value" "true"
@@ -76,7 +76,7 @@ if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right
 		/// @DnDAction : YoYo Games.Mouse & Keyboard.If_Mouse_Released
 		/// @DnDVersion : 1.1
 		/// @DnDHash : 44C8EEA7
-		/// @DnDComment : And the left mouse button is clicked...
+		/// @DnDComment : // And the left mouse button is clicked...
 		/// @DnDParent : 4E7335FE
 		var l44C8EEA7_0;
 		l44C8EEA7_0 = mouse_check_button_released(mb_left);

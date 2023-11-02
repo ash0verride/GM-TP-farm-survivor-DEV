@@ -1,5 +1,4 @@
-// Seems a bit crazy!
-// But this is an easy way to do drop chances
+// Easy way to do drop chances
 // of different items.
 // In this case we have 9 in 10 chance of dropping
 // regular collectibles, and a 1 in 10 chance of

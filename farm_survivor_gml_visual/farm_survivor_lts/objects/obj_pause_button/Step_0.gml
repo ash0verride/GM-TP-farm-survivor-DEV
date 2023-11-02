@@ -1,7 +1,7 @@
 /// @DnDAction : YoYo Games.Common.If_Expression
 /// @DnDVersion : 1
 /// @DnDHash : 5DB9E288
-/// @DnDComment : // Checks no menus are showing
+/// @DnDComment : // Checks no menus are showing.
 /// @DnDInput : 4
 /// @DnDArgument : "expr" "instance_exists(obj_pause_screen)"
 /// @DnDArgument : "not" "1"
@@ -16,7 +16,7 @@ if(!(instance_exists(obj_pause_screen)) && !(instance_exists(obj_upgrade_screen)
 	/// @DnDAction : YoYo Games.Common.Temp_Variable
 	/// @DnDVersion : 1
 	/// @DnDHash : 1EAE054E
-	/// @DnDComment : // Stores how many gamepad count
+	/// @DnDComment : // Stores how many gamepad count.
 	/// @DnDParent : 5DB9E288
 	/// @DnDArgument : "var" "_max_pads"
 	/// @DnDArgument : "value" "gamepad_get_device_count()"
@@ -25,7 +25,7 @@ if(!(instance_exists(obj_pause_screen)) && !(instance_exists(obj_upgrade_screen)
 	/// @DnDAction : YoYo Games.Common.If_Variable
 	/// @DnDVersion : 1
 	/// @DnDHash : 62861E9D
-	/// @DnDComment : // Checks when at least 1 gamepad is present
+	/// @DnDComment : // Checks when at least 1 gamepad is present.
 	/// @DnDParent : 5DB9E288
 	/// @DnDArgument : "var" "_max_pads"
 	/// @DnDArgument : "op" "2"
@@ -34,7 +34,7 @@ if(!(instance_exists(obj_pause_screen)) && !(instance_exists(obj_upgrade_screen)
 		/// @DnDAction : YoYo Games.Common.If_Expression
 		/// @DnDVersion : 1
 		/// @DnDHash : 2AF229C3
-		/// @DnDComment : // Checks the gamepad is connected
+		/// @DnDComment : // Checks the gamepad is connected.
 		/// @DnDParent : 62861E9D
 		/// @DnDArgument : "expr" "gamepad_is_connected(0)"
 		if(gamepad_is_connected(0))
@@ -42,7 +42,7 @@ if(!(instance_exists(obj_pause_screen)) && !(instance_exists(obj_upgrade_screen)
 			/// @DnDAction : YoYo Games.Gamepad.If_Gamepad_Button_Pressed
 			/// @DnDVersion : 1.1
 			/// @DnDHash : 69904264
-			/// @DnDComment : // Checks if gamepad button has been pressed
+			/// @DnDComment : // Checks if gamepad button has been pressed.
 			/// @DnDParent : 2AF229C3
 			/// @DnDArgument : "btn" "gp_start"
 			var l69904264_0 = 0;
@@ -100,7 +100,7 @@ if(!(instance_exists(obj_pause_screen)) && !(instance_exists(obj_upgrade_screen)
 	/// @DnDAction : YoYo Games.Common.If_Expression
 	/// @DnDVersion : 1
 	/// @DnDHash : 78C80C48
-	/// @DnDComment : // Checks if the escape key has been released and the ecape key is now down
+	/// @DnDComment : // Checks if the escape key has been released and the ecape key is now down.
 	/// @DnDParent : 5DB9E288
 	/// @DnDArgument : "expr" "has_released && keyboard_check(vk_escape)"
 	if(has_released && keyboard_check(vk_escape))
@@ -228,7 +228,7 @@ if(!(instance_exists(obj_pause_screen)) && !(instance_exists(obj_upgrade_screen)
 			/// @DnDAction : YoYo Games.Common.Variable
 			/// @DnDVersion : 1
 			/// @DnDHash : 210295AB
-			/// @DnDComment : // Reduce target scale size further
+			/// @DnDComment : // Reduce target scale size further.
 			/// @DnDParent : 669B137E
 			/// @DnDArgument : "expr" "0.9"
 			/// @DnDArgument : "var" "target_scale"
@@ -238,7 +238,7 @@ if(!(instance_exists(obj_pause_screen)) && !(instance_exists(obj_upgrade_screen)
 		/// @DnDAction : YoYo Games.Common.If_Variable
 		/// @DnDVersion : 1
 		/// @DnDHash : 3B261D28
-		/// @DnDComment : Checks if mouse has been clicked on this button
+		/// @DnDComment : Checks if mouse has been clicked on this button.
 		/// @DnDParent : 0E95FC62
 		/// @DnDArgument : "var" "is_clicked"
 		/// @DnDArgument : "value" "true"
@@ -247,7 +247,7 @@ if(!(instance_exists(obj_pause_screen)) && !(instance_exists(obj_upgrade_screen)
 			/// @DnDAction : YoYo Games.Common.Variable
 			/// @DnDVersion : 1
 			/// @DnDHash : 1E45BAC9
-			/// @DnDComment : // Reduce target scale size further
+			/// @DnDComment : // Reduce target scale size further.
 			/// @DnDParent : 3B261D28
 			/// @DnDArgument : "expr" "0.9"
 			/// @DnDArgument : "var" "target_scale"
@@ -329,7 +329,7 @@ if(!(instance_exists(obj_pause_screen)) && !(instance_exists(obj_upgrade_screen)
 	/// @DnDAction : YoYo Games.Common.Variable
 	/// @DnDVersion : 1
 	/// @DnDHash : 324C8170
-	/// @DnDComment : // Lerp scale values to target scale
+	/// @DnDComment : // Lerp scale values to target scale.
 	/// @DnDInput : 2
 	/// @DnDParent : 5DB9E288
 	/// @DnDArgument : "expr" "lerp(image_xscale, target_scale, 0.1)"

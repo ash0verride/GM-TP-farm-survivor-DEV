@@ -1,6 +1,7 @@
 // Call parent event to set up general eney stuff.
 event_inherited();
 
+// Set animation speed.
 image_speed = 1;
 
 // Set max hitpoints specifically for this enemy type.

@@ -12,7 +12,7 @@ if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right
 	/// @DnDAction : YoYo Games.Common.Variable
 	/// @DnDVersion : 1
 	/// @DnDHash : 1B9B0D30
-	/// @DnDComment : // Reduce target scale size
+	/// @DnDComment : // Reduce target scale size.
 	/// @DnDParent : 0E95FC62
 	/// @DnDArgument : "expr" "0.95"
 	/// @DnDArgument : "var" "target_scale"
@@ -39,7 +39,7 @@ if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right
 		/// @DnDAction : YoYo Games.Common.Variable
 		/// @DnDVersion : 1
 		/// @DnDHash : 3DE2EFBE
-		/// @DnDComment : // Sets click state to  true
+		/// @DnDComment : // Sets click state to true.
 		/// @DnDParent : 16C046C8
 		/// @DnDArgument : "expr" "true"
 		/// @DnDArgument : "var" "is_clicked"
@@ -48,7 +48,7 @@ if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right
 		/// @DnDAction : YoYo Games.Common.Variable
 		/// @DnDVersion : 1
 		/// @DnDHash : 70A91B41
-		/// @DnDComment : // Reduce target scale size further
+		/// @DnDComment : // Reduce target scale size further.
 		/// @DnDParent : 16C046C8
 		/// @DnDArgument : "expr" "0.9"
 		/// @DnDArgument : "var" "target_scale"
@@ -58,7 +58,7 @@ if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right
 	/// @DnDAction : YoYo Games.Common.If_Variable
 	/// @DnDVersion : 1
 	/// @DnDHash : 66D4B417
-	/// @DnDComment : // Checks if mouse has been clicked on this button
+	/// @DnDComment : // Checks if mouse has been clicked on this button.
 	/// @DnDParent : 0E95FC62
 	/// @DnDArgument : "var" "is_clicked"
 	/// @DnDArgument : "value" "true"
@@ -67,7 +67,7 @@ if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right
 		/// @DnDAction : YoYo Games.Common.Variable
 		/// @DnDVersion : 1
 		/// @DnDHash : 4A782E27
-		/// @DnDComment : // Reduce target scale size further
+		/// @DnDComment : // Reduce target scale size further.
 		/// @DnDParent : 66D4B417
 		/// @DnDArgument : "expr" "0.9"
 		/// @DnDArgument : "var" "target_scale"
@@ -110,7 +110,7 @@ else
 	/// @DnDAction : YoYo Games.Common.Variable
 	/// @DnDVersion : 1
 	/// @DnDHash : 223BBD88
-	/// @DnDComment : // Reset target scale size
+	/// @DnDComment : // Reset target scale size.
 	/// @DnDParent : 768958BC
 	/// @DnDArgument : "expr" "1.0"
 	/// @DnDArgument : "var" "target_scale"
@@ -120,7 +120,7 @@ else
 /// @DnDAction : YoYo Games.Common.Temp_Variable
 /// @DnDVersion : 1
 /// @DnDHash : 302D5922
-/// @DnDComment : // Stores how many gamepad count
+/// @DnDComment : // Stores how many gamepad count.
 /// @DnDArgument : "var" "_max_pads"
 /// @DnDArgument : "value" "gamepad_get_device_count()"
 var _max_pads = gamepad_get_device_count();
@@ -128,7 +128,7 @@ var _max_pads = gamepad_get_device_count();
 /// @DnDAction : YoYo Games.Common.If_Variable
 /// @DnDVersion : 1
 /// @DnDHash : 2ADB7DCB
-/// @DnDComment : // Checks when at least 1 gamepad is present
+/// @DnDComment : // Checks when at least 1 gamepad is present.
 /// @DnDArgument : "var" "_max_pads"
 /// @DnDArgument : "op" "2"
 if(_max_pads > 0)
@@ -136,7 +136,7 @@ if(_max_pads > 0)
 	/// @DnDAction : YoYo Games.Common.If_Expression
 	/// @DnDVersion : 1
 	/// @DnDHash : 0239D7F9
-	/// @DnDComment : // Checks the gamepad is connected
+	/// @DnDComment : // Checks the gamepad is connected.
 	/// @DnDParent : 2ADB7DCB
 	/// @DnDArgument : "expr" "gamepad_is_connected(0)"
 	if(gamepad_is_connected(0))
@@ -144,7 +144,7 @@ if(_max_pads > 0)
 		/// @DnDAction : YoYo Games.Gamepad.If_Gamepad_Button_Pressed
 		/// @DnDVersion : 1.1
 		/// @DnDHash : 12FEE2D1
-		/// @DnDComment : // Checks if gamepad button has been pressed
+		/// @DnDComment : // Checks if gamepad button has been pressed.
 		/// @DnDParent : 0239D7F9
 		var l12FEE2D1_0 = 0;
 		var l12FEE2D1_1 = gp_face4;
@@ -182,7 +182,7 @@ if(_max_pads > 0)
 /// @DnDAction : YoYo Games.Common.Variable
 /// @DnDVersion : 1
 /// @DnDHash : 66407AFF
-/// @DnDComment : // Lerp scale values to target scale
+/// @DnDComment : // Lerp scale values to target scale.
 /// @DnDInput : 2
 /// @DnDArgument : "expr" "lerp(image_xscale, target_scale, 0.1)"
 /// @DnDArgument : "expr_1" "lerp(image_yscale, target_scale, 0.1)"

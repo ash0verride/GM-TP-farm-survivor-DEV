@@ -1,6 +1,7 @@
 /// @DnDAction : YoYo Games.Common.If_Variable
 /// @DnDVersion : 1
 /// @DnDHash : 248E201C
+/// @DnDComment : // If not paused.
 /// @DnDArgument : "var" "global.paused"
 /// @DnDArgument : "not" "1"
 /// @DnDArgument : "value" "true"
@@ -9,6 +10,7 @@ if(!(global.paused == true))
 	/// @DnDAction : YoYo Games.Common.Variable
 	/// @DnDVersion : 1
 	/// @DnDHash : 66E7B307
+	/// @DnDComment : // Decrement with --.
 	/// @DnDParent : 248E201C
 	/// @DnDArgument : "expr" "-1"
 	/// @DnDArgument : "expr_relative" "1"
@@ -19,14 +21,14 @@ if(!(global.paused == true))
 /// @DnDAction : YoYo Games.Common.If_Expression
 /// @DnDVersion : 1
 /// @DnDHash : 499DF98F
-/// @DnDComment : If our healthbar timer is over 0...$(13_10)$(13_10)(note that we also decrement it with --)
+/// @DnDComment : // If our healthbar timer is over 0...
 /// @DnDArgument : "expr" "show_healthbar > 0"
 if(show_healthbar > 0)
 {
 	/// @DnDAction : YoYo Games.Drawing.Draw_Sprite_Transformed
 	/// @DnDVersion : 1
 	/// @DnDHash : 364D8FA3
-	/// @DnDComment : Draw the back of the healthbar.
+	/// @DnDComment : // Draw the back of the healthbar.
 	/// @DnDParent : 499DF98F
 	/// @DnDArgument : "x" "-50"
 	/// @DnDArgument : "x_relative" "1"
@@ -41,7 +43,7 @@ if(show_healthbar > 0)
 	/// @DnDAction : YoYo Games.Drawing.Draw_Sprite_Transformed
 	/// @DnDVersion : 1
 	/// @DnDHash : 31AEEE9A
-	/// @DnDComment : Draw the filling of the healthbar.
+	/// @DnDComment : // Draw the filling of the healthbar.
 	/// @DnDParent : 499DF98F
 	/// @DnDArgument : "x" "-50 + 4"
 	/// @DnDArgument : "x_relative" "1"

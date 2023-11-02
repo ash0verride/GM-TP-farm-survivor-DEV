@@ -1,7 +1,7 @@
 /// @DnDAction : YoYo Games.Common.If_Expression
 /// @DnDVersion : 1
 /// @DnDHash : 651A7C73
-/// @DnDComment : // Checks no menus are showing
+/// @DnDComment : // Checks no menus are showing.
 /// @DnDInput : 4
 /// @DnDArgument : "expr" "instance_exists(obj_pause_screen)"
 /// @DnDArgument : "not" "1"

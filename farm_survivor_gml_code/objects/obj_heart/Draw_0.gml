@@ -1,6 +1,8 @@
+// Checks if the game is paused.
 if (global.paused)
 {
-	draw_sprite(sprite_index, 0, x + 0, y + 0);
+	// Draw our sprite.
+	draw_sprite(sprite_index, 0, x, y);
 }
 else
 {

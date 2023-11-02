@@ -12,7 +12,7 @@ if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right
 	/// @DnDAction : YoYo Games.Common.Variable
 	/// @DnDVersion : 1
 	/// @DnDHash : 4EF390BB
-	/// @DnDComment : // Reduce target scale size
+	/// @DnDComment : // Reduce target scale size.
 	/// @DnDParent : 0E95FC62
 	/// @DnDArgument : "expr" "0.95"
 	/// @DnDArgument : "var" "target_scale"
@@ -39,7 +39,7 @@ if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right
 		/// @DnDAction : YoYo Games.Common.Variable
 		/// @DnDVersion : 1
 		/// @DnDHash : 415ED6E7
-		/// @DnDComment : // Sets click state to true
+		/// @DnDComment : // Sets click state to true.
 		/// @DnDParent : 16C046C8
 		/// @DnDArgument : "expr" "true"
 		/// @DnDArgument : "var" "is_clicked"
@@ -48,7 +48,7 @@ if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right
 		/// @DnDAction : YoYo Games.Common.Variable
 		/// @DnDVersion : 1
 		/// @DnDHash : 20ED68C7
-		/// @DnDComment : // Reduce target scale size further
+		/// @DnDComment : // Reduce target scale size further.
 		/// @DnDParent : 16C046C8
 		/// @DnDArgument : "expr" "0.9"
 		/// @DnDArgument : "var" "target_scale"
@@ -58,7 +58,7 @@ if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right
 	/// @DnDAction : YoYo Games.Common.If_Variable
 	/// @DnDVersion : 1
 	/// @DnDHash : 0B0EEBA0
-	/// @DnDComment : // Checks if mouse has been clicked on this button
+	/// @DnDComment : // Checks if mouse has been clicked on this button.
 	/// @DnDParent : 0E95FC62
 	/// @DnDArgument : "var" "is_clicked"
 	/// @DnDArgument : "value" "true"
@@ -67,7 +67,7 @@ if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right
 		/// @DnDAction : YoYo Games.Common.Variable
 		/// @DnDVersion : 1
 		/// @DnDHash : 5DA5C278
-		/// @DnDComment : // Reduce target scale size further
+		/// @DnDComment : // Reduce target scale size further.
 		/// @DnDParent : 0B0EEBA0
 		/// @DnDArgument : "expr" "0.9"
 		/// @DnDArgument : "var" "target_scale"
@@ -85,7 +85,7 @@ if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right
 			/// @DnDAction : YoYo Games.Game.End_Game
 			/// @DnDVersion : 1
 			/// @DnDHash : 155529FF
-			/// @DnDComment : // Closes the game
+			/// @DnDComment : // Closes the game.
 			/// @DnDParent : 44C8EEA7
 			game_end();
 		}
@@ -100,7 +100,7 @@ else
 	/// @DnDAction : YoYo Games.Common.Variable
 	/// @DnDVersion : 1
 	/// @DnDHash : 27E12203
-	/// @DnDComment : // Reset target scale size
+	/// @DnDComment : // Reset target scale size.
 	/// @DnDParent : 589732F9
 	/// @DnDArgument : "expr" "1.0"
 	/// @DnDArgument : "var" "target_scale"
@@ -110,7 +110,7 @@ else
 /// @DnDAction : YoYo Games.Common.Temp_Variable
 /// @DnDVersion : 1
 /// @DnDHash : 054B7B09
-/// @DnDComment : // Stores how many gamepad count
+/// @DnDComment : // Stores how many gamepad count.
 /// @DnDArgument : "var" "_max_pads"
 /// @DnDArgument : "value" "gamepad_get_device_count()"
 var _max_pads = gamepad_get_device_count();
@@ -118,7 +118,7 @@ var _max_pads = gamepad_get_device_count();
 /// @DnDAction : YoYo Games.Common.If_Variable
 /// @DnDVersion : 1
 /// @DnDHash : 17D7D7E9
-/// @DnDComment : // Checks when at least 1 gamepad is present
+/// @DnDComment : // Checks when at least 1 gamepad is present.
 /// @DnDArgument : "var" "_max_pads"
 /// @DnDArgument : "op" "2"
 if(_max_pads > 0)
@@ -126,7 +126,7 @@ if(_max_pads > 0)
 	/// @DnDAction : YoYo Games.Common.If_Expression
 	/// @DnDVersion : 1
 	/// @DnDHash : 194771C6
-	/// @DnDComment : // Checks the gamepad is connected
+	/// @DnDComment : // Checks the gamepad is connected.
 	/// @DnDParent : 17D7D7E9
 	/// @DnDArgument : "expr" "gamepad_is_connected(0)"
 	if(gamepad_is_connected(0))
@@ -134,7 +134,7 @@ if(_max_pads > 0)
 		/// @DnDAction : YoYo Games.Gamepad.If_Gamepad_Button_Pressed
 		/// @DnDVersion : 1.1
 		/// @DnDHash : 0406BA4B
-		/// @DnDComment : // Checks if gamepad button has been pressed
+		/// @DnDComment : // Checks if gamepad button has been pressed.
 		/// @DnDParent : 194771C6
 		/// @DnDArgument : "btn" "gp_select"
 		var l0406BA4B_0 = 0;
@@ -144,7 +144,7 @@ if(_max_pads > 0)
 			/// @DnDAction : YoYo Games.Game.End_Game
 			/// @DnDVersion : 1
 			/// @DnDHash : 2893580D
-			/// @DnDComment : // Closes the game
+			/// @DnDComment : // Closes the game.
 			/// @DnDParent : 0406BA4B
 			game_end();
 		}
@@ -154,7 +154,7 @@ if(_max_pads > 0)
 /// @DnDAction : YoYo Games.Common.Variable
 /// @DnDVersion : 1
 /// @DnDHash : 0D89E36C
-/// @DnDComment : // Lerp scale values to target scale
+/// @DnDComment : // Lerp scale values to target scale.
 /// @DnDInput : 2
 /// @DnDArgument : "expr" "lerp(image_xscale, target_scale, 0.1)"
 /// @DnDArgument : "expr_1" "lerp(image_yscale, target_scale, 0.1)"

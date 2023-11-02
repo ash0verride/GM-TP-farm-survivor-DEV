@@ -1,5 +1,5 @@
 // If mouse is over the button, adjusting for GUI layer...
-if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right && device_mouse_y_to_gui(0) > bbox_top && device_mouse_y_to_gui(0) < bbox_bottom)
+if (device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right && device_mouse_y_to_gui(0) > bbox_top && device_mouse_y_to_gui(0) < bbox_bottom)
 {
 	// Reduce target scale size.
 	target_scale = 0.95;
@@ -61,6 +61,6 @@ if (_max_pads > 0)
 	}
 }
 
-// Lerp scale values to target scale
+// Lerp scale values to target scale.
 image_xscale = lerp(image_xscale, target_scale, 0.1);
 image_yscale = lerp(image_yscale, target_scale, 0.1);

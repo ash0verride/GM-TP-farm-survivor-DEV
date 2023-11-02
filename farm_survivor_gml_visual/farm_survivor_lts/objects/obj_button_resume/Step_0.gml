@@ -1,7 +1,7 @@
 /// @DnDAction : YoYo Games.Common.If_Expression
 /// @DnDVersion : 1
 /// @DnDHash : 0E95FC62
-/// @DnDComment : If mouse is over this instance, adjusting for the GUI layer...
+/// @DnDComment : // If mouse is over this instance, adjusting for the GUI layer...
 /// @DnDInput : 4
 /// @DnDArgument : "expr" "device_mouse_x_to_gui(0) > bbox_left"
 /// @DnDArgument : "expr_1" "device_mouse_x_to_gui(0) < bbox_right"
@@ -58,7 +58,7 @@ if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right
 	/// @DnDAction : YoYo Games.Common.If_Variable
 	/// @DnDVersion : 1
 	/// @DnDHash : 5CC4D35E
-	/// @DnDComment : Checks if mouse has been clicked on this button.
+	/// @DnDComment : // Checks if mouse has been clicked on this button.
 	/// @DnDParent : 0E95FC62
 	/// @DnDArgument : "var" "is_clicked"
 	/// @DnDArgument : "value" "true"
@@ -195,7 +195,7 @@ if(_max_pads > 0)
 			/// @DnDAction : YoYo Games.Instances.Destroy_Instance
 			/// @DnDVersion : 1
 			/// @DnDHash : 4160984A
-			/// @DnDComment : // Destroy pause screen object
+			/// @DnDComment : // Destroy pause screen object.
 			/// @DnDApplyTo : obj_pause_screen
 			/// @DnDParent : 23D6CE7F
 			with(obj_pause_screen) instance_destroy();
@@ -203,7 +203,7 @@ if(_max_pads > 0)
 			/// @DnDAction : YoYo Games.Instances.Destroy_Instance
 			/// @DnDVersion : 1
 			/// @DnDHash : 4CD10311
-			/// @DnDComment : // Destroy exit button
+			/// @DnDComment : // Destroy exit button.
 			/// @DnDApplyTo : obj_button_exit
 			/// @DnDParent : 23D6CE7F
 			with(obj_button_exit) instance_destroy();
@@ -211,7 +211,7 @@ if(_max_pads > 0)
 			/// @DnDAction : YoYo Games.Instances.Destroy_Instance
 			/// @DnDVersion : 1
 			/// @DnDHash : 06420858
-			/// @DnDComment : // Destroy resume button
+			/// @DnDComment : // Destroy resume button.
 			/// @DnDApplyTo : obj_button_resume
 			/// @DnDParent : 23D6CE7F
 			with(obj_button_resume) instance_destroy();
@@ -254,7 +254,7 @@ if(has_released && keyboard_check(vk_escape))
 	/// @DnDAction : YoYo Games.Instances.Destroy_Instance
 	/// @DnDVersion : 1
 	/// @DnDHash : 27723CD0
-	/// @DnDComment : // Destroy pause screen object
+	/// @DnDComment : // Destroy pause screen object.
 	/// @DnDApplyTo : obj_pause_screen
 	/// @DnDParent : 2EE04AB6
 	with(obj_pause_screen) instance_destroy();
@@ -262,7 +262,7 @@ if(has_released && keyboard_check(vk_escape))
 	/// @DnDAction : YoYo Games.Instances.Destroy_Instance
 	/// @DnDVersion : 1
 	/// @DnDHash : 2964FC60
-	/// @DnDComment : // Destroy exit button
+	/// @DnDComment : // Destroy exit button.
 	/// @DnDApplyTo : obj_button_exit
 	/// @DnDParent : 2EE04AB6
 	with(obj_button_exit) instance_destroy();
@@ -270,7 +270,7 @@ if(has_released && keyboard_check(vk_escape))
 	/// @DnDAction : YoYo Games.Instances.Destroy_Instance
 	/// @DnDVersion : 1
 	/// @DnDHash : 564B9231
-	/// @DnDComment : // Destroy resume button
+	/// @DnDComment : // Destroy resume button.
 	/// @DnDApplyTo : obj_button_resume
 	/// @DnDParent : 2EE04AB6
 	with(obj_button_resume) instance_destroy();
@@ -300,7 +300,7 @@ else
 	/// @DnDAction : YoYo Games.Common.If_Expression
 	/// @DnDVersion : 1
 	/// @DnDHash : 418B0A02
-	/// @DnDComment : // Checks if the escape key is currently released
+	/// @DnDComment : // Checks if the escape key is currently released.
 	/// @DnDParent : 029327D5
 	/// @DnDArgument : "expr" "keyboard_check(vk_escape)"
 	/// @DnDArgument : "not" "1"
@@ -309,7 +309,7 @@ else
 		/// @DnDAction : YoYo Games.Common.Variable
 		/// @DnDVersion : 1
 		/// @DnDHash : 5EC1495D
-		/// @DnDComment : // Sets state to true
+		/// @DnDComment : // Sets state to true.
 		/// @DnDParent : 418B0A02
 		/// @DnDArgument : "expr" "true"
 		/// @DnDArgument : "var" "has_released"

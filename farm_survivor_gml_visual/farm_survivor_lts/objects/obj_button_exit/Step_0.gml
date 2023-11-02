@@ -1,7 +1,7 @@
 /// @DnDAction : YoYo Games.Common.If_Expression
 /// @DnDVersion : 1
 /// @DnDHash : 0D78DA2D
-/// @DnDComment : If mouse is over the button, adjusting for GUI layer...
+/// @DnDComment : // If mouse is over the button, adjusting for GUI layer...
 /// @DnDInput : 4
 /// @DnDArgument : "expr" "device_mouse_x_to_gui(0) > bbox_left"
 /// @DnDArgument : "expr_1" "device_mouse_x_to_gui(0) < bbox_right"
@@ -58,7 +58,7 @@ if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right
 	/// @DnDAction : YoYo Games.Common.If_Variable
 	/// @DnDVersion : 1
 	/// @DnDHash : 70B6DC44
-	/// @DnDComment : Checks if mouse has been clicked on this button.
+	/// @DnDComment : // Checks if mouse has been clicked on this button.
 	/// @DnDParent : 0D78DA2D
 	/// @DnDArgument : "var" "is_clicked"
 	/// @DnDArgument : "value" "true"

@@ -1,7 +1,7 @@
 /// @DnDAction : YoYo Games.Common.If_Expression
 /// @DnDVersion : 1
 /// @DnDHash : 6752F637
-/// @DnDComment : If our hitpoints is over 0,$(13_10)$(13_10)AND we are not currently being hit.
+/// @DnDComment : // If our hitpoints is over 0,$(13_10)$(13_10)// AND we are not currently being hit.
 /// @DnDInput : 2
 /// @DnDArgument : "expr" "hitpoints > 0"
 /// @DnDArgument : "expr_1" "sprite_index != hit_sprite"
@@ -10,7 +10,7 @@ if(hitpoints > 0 && sprite_index != hit_sprite)
 	/// @DnDAction : YoYo Games.Random.Choose
 	/// @DnDVersion : 1
 	/// @DnDHash : 27567CAE
-	/// @DnDComment : Choose a random hit sound effect.
+	/// @DnDComment : // Choose a random hit sound effect.
 	/// @DnDInput : 3
 	/// @DnDParent : 6752F637
 	/// @DnDArgument : "var" "_sound"
@@ -22,7 +22,7 @@ if(hitpoints > 0 && sprite_index != hit_sprite)
 	/// @DnDAction : YoYo Games.Audio.Play_Audio
 	/// @DnDVersion : 1.1
 	/// @DnDHash : 53CA5D24
-	/// @DnDComment : Play the chosen sound.
+	/// @DnDComment : // Play the chosen sound.
 	/// @DnDParent : 6752F637
 	/// @DnDArgument : "soundid" "_sound"
 	/// @DnDArgument : "gain" "1"
@@ -31,7 +31,7 @@ if(hitpoints > 0 && sprite_index != hit_sprite)
 	/// @DnDAction : YoYo Games.Common.Variable
 	/// @DnDVersion : 1
 	/// @DnDHash : 199F1D8A
-	/// @DnDComment : Set healthbar timer to 60.
+	/// @DnDComment : // Set healthbar timer to 60.
 	/// @DnDParent : 6752F637
 	/// @DnDArgument : "expr" "60"
 	/// @DnDArgument : "var" "show_healthbar"
@@ -40,7 +40,7 @@ if(hitpoints > 0 && sprite_index != hit_sprite)
 	/// @DnDAction : YoYo Games.Common.Variable
 	/// @DnDVersion : 1
 	/// @DnDHash : 5E0F7438
-	/// @DnDComment : Reduce hitpoints by the damaged caused by the swipe weapon.
+	/// @DnDComment : // Reduce hitpoints by the damaged caused by the swipe weapon.
 	/// @DnDParent : 6752F637
 	/// @DnDArgument : "expr" "-global.swipe[? "damage"]"
 	/// @DnDArgument : "expr_relative" "1"
@@ -50,7 +50,7 @@ if(hitpoints > 0 && sprite_index != hit_sprite)
 	/// @DnDAction : YoYo Games.Instances.Create_Instance
 	/// @DnDVersion : 1
 	/// @DnDHash : 428932B9
-	/// @DnDComment : Create text popup to indicate damage.
+	/// @DnDComment : // Create text popup to indicate damage.
 	/// @DnDParent : 6752F637
 	/// @DnDArgument : "xpos_relative" "1"
 	/// @DnDArgument : "ypos_relative" "1"
@@ -64,7 +64,7 @@ if(hitpoints > 0 && sprite_index != hit_sprite)
 	/// @DnDAction : YoYo Games.Common.Variable
 	/// @DnDVersion : 1
 	/// @DnDHash : 028F9EC6
-	/// @DnDComment : Set text to damage caused.
+	/// @DnDComment : // Set text to damage caused.
 	/// @DnDParent : 6752F637
 	/// @DnDArgument : "expr" "-global.swipe[? "damage"]"
 	/// @DnDArgument : "var" "_text.text"
@@ -73,7 +73,7 @@ if(hitpoints > 0 && sprite_index != hit_sprite)
 	/// @DnDAction : YoYo Games.Instances.Set_Sprite
 	/// @DnDVersion : 1
 	/// @DnDHash : 36E67042
-	/// @DnDComment : Set sprite to hit sprite.
+	/// @DnDComment : // Set sprite to hit sprite.
 	/// @DnDParent : 6752F637
 	/// @DnDArgument : "spriteind" "hit_sprite"
 	sprite_index = hit_sprite;
@@ -82,7 +82,7 @@ if(hitpoints > 0 && sprite_index != hit_sprite)
 	/// @DnDAction : YoYo Games.Common.If_Expression
 	/// @DnDVersion : 1
 	/// @DnDHash : 2BDA2D23
-	/// @DnDComment : If hitpoints has reached zero...
+	/// @DnDComment : // If hitpoints has reached zero...
 	/// @DnDParent : 6752F637
 	/// @DnDArgument : "expr" "hitpoints <= 0"
 	if(hitpoints <= 0)
@@ -90,7 +90,7 @@ if(hitpoints > 0 && sprite_index != hit_sprite)
 		/// @DnDAction : YoYo Games.Instances.Destroy_Instance
 		/// @DnDVersion : 1
 		/// @DnDHash : 009B7F5C
-		/// @DnDComment : Destroy this instance.
+		/// @DnDComment : // Destroy this instance.
 		/// @DnDParent : 2BDA2D23
 		instance_destroy();
 	}
