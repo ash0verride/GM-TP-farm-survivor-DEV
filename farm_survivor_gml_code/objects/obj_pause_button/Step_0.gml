@@ -21,6 +21,12 @@ if(!instance_exists(obj_pause_screen) && !instance_exists(obj_upgrade_screen) &&
 		
 				// Call the pause function.
 				pause();
+				
+				// Sets released state to false.
+				has_released = false;
+				
+				// Ends event.
+				exit;
 			}
 		}
 	}
@@ -37,12 +43,18 @@ if(!instance_exists(obj_pause_screen) && !instance_exists(obj_upgrade_screen) &&
 		// Call the pause function.
 		pause();
 		
+		// Sets released state to false.
 		has_released = false;
+		
+		// Ends event.
+		exit;
 	}
 	else
 	{
+		// Checks if escape key is not pressed.
 		if (!keyboard_check(vk_escape))
 		{
+			// Sets released state to true.
 			has_released = true;	
 		}
 	}
@@ -53,8 +65,10 @@ if(!instance_exists(obj_pause_screen) && !instance_exists(obj_upgrade_screen) &&
 		// Reduce target scale size
 		target_scale = 0.95;
 		
+		// If left mouse button is pressed...
 		if (mouse_check_button_pressed(mb_left))
 		{
+			// Play click sound effect.
 			audio_play_sound(snd_click, 0, 0, 1.0, undefined, 1.0);
 			
 			// Sets click state to true
@@ -73,6 +87,7 @@ if(!instance_exists(obj_pause_screen) && !instance_exists(obj_upgrade_screen) &&
 			// If left mouse button is released.
 			if (mouse_check_button_released(mb_left))
 			{
+				// Play click sound effect.
 				audio_play_sound(snd_ui_select, 0, 0, 1.0, undefined, 1.0);
 		
 				// Create pause screen.
@@ -80,12 +95,15 @@ if(!instance_exists(obj_pause_screen) && !instance_exists(obj_upgrade_screen) &&
 		
 				// Call the pause function.
 				pause();
+				
+				// Ends event.
+				exit;
 			}
 		}
 	}
 	else
 	{
-		// Sets click state to false
+		// Sets click state to false.
 		is_clicked = false;
 		
 		// Reset target scale size

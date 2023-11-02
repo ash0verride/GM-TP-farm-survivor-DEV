@@ -9,7 +9,7 @@ if (l3C752ECA_0)
 	/// @DnDAction : YoYo Games.Common.Variable
 	/// @DnDVersion : 1
 	/// @DnDHash : 747931B3
-	/// @DnDComment : // Sets the mouse to unclick
+	/// @DnDComment : // Sets the mouse to unclick.
 	/// @DnDParent : 3C752ECA
 	/// @DnDArgument : "expr" "false"
 	/// @DnDArgument : "var" "is_clicked"

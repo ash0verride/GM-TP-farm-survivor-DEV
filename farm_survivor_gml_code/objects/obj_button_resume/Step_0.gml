@@ -1,7 +1,7 @@
 // If mouse is over this instance, adjusting for the GUI layer...
 if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right && device_mouse_y_to_gui(0) > bbox_top && device_mouse_y_to_gui(0) < bbox_bottom)
 {
-	// Reduce target scale size
+	// Reduce target scale size.
 	target_scale = 0.95;
 	
 	// If left mouse button is pressed...
@@ -10,17 +10,17 @@ if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right
 		// Play click sound effect.
 		audio_play_sound(snd_click, 0, 0, 1.0, undefined, 1.0);
 		
-		// Sets click state to true
+		// Sets click state to true.
 		is_clicked = true;
 		
-		// Reduce target scale size further
+		// Reduce target scale size further.
 		target_scale = 0.9;
 	}
 	
-	// Checks if mouse has been clicked on this button
+	// Checks if mouse has been clicked on this button.
 	if (is_clicked)
 	{
-		// Reduce target scale size further
+		// Reduce target scale size further.
 		target_scale = 0.9;
 		
 		// If left mouse button is released.
@@ -29,14 +29,20 @@ if(device_mouse_x_to_gui(0) > bbox_left && device_mouse_x_to_gui(0) < bbox_right
 			// Play click sound effect.
 			audio_play_sound(snd_ui_select, 0, 0, 1.0, undefined, 1.0);
 	
-			// Destroy pause screen object
+			// Destroy pause screen object.
 			with(obj_pause_screen) instance_destroy();
 	
-			// Destroy exit button
+			// Destroy exit button.
 			with(obj_button_exit) instance_destroy();
 	
-			// Destroy resume button
+			// Destroy resume button.
 			with(obj_button_resume) instance_destroy();
+			
+			// Reset pause buttons released state.
+			obj_pause_button.has_released = false;
+			
+			// Exit event.
+			exit;
 		}
 	}
 }
@@ -69,11 +75,17 @@ if (_max_pads > 0)
 	
 			// Destroy resume button
 			with(obj_button_resume) instance_destroy();
+			
+			// Reset pause buttons released state.
+			obj_pause_button.has_released = false;
+			
+			// Exit event.
+			exit;
 		}
 	}
 }
 
-// Checks if the escape key has been released and the ecape key is now down
+// Checks if the escape key has been released and the ecape key is now down.
 if (has_released && keyboard_check(vk_escape))
 {
 	// Play click sound effect.
@@ -87,6 +99,12 @@ if (has_released && keyboard_check(vk_escape))
 	
 	// Destroy resume button
 	with(obj_button_resume) instance_destroy();
+	
+	// Reset pause buttons released state.
+	obj_pause_button.has_released = false;
+	
+	// Exit event.
+	exit;
 }
 else
 {
