@@ -8,7 +8,8 @@ function pause()
 	global.paused = true;
 
 	// Apply the following code to all instances...
-	with(all) {
+	with (all) 
+	{
 		// Save the instance's speed.
 		paused_speed = speed;
 	

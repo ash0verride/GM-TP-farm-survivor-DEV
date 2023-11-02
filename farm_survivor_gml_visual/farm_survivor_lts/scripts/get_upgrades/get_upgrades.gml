@@ -1,14 +1,14 @@
 /// @DnDAction : YoYo Games.Common.Function
 /// @DnDVersion : 1
 /// @DnDHash : 7C795615
-/// @DnDComment : Declare a function that retrieves all possible upgrades$(13_10)and creates upgrade card objects for 3 of them.
+/// @DnDComment : // Declare a function that retrieves all possible upgrades$(13_10)// and creates upgrade card objects for 3 of them.
 /// @DnDArgument : "funcName" "get_upgrades"
 function get_upgrades() 
 {
 	/// @DnDAction : YoYo Games.Instances.Destroy_Instance
 	/// @DnDVersion : 1
 	/// @DnDHash : 017ACDF5
-	/// @DnDComment : Destroy any existing upgrade cards.
+	/// @DnDComment : // Destroy any existing upgrade cards.
 	/// @DnDApplyTo : obj_upgrade
 	/// @DnDParent : 7C795615
 	with(obj_upgrade) instance_destroy();
@@ -16,7 +16,7 @@ function get_upgrades()
 	/// @DnDAction : YoYo Games.Data Structures.Create_List
 	/// @DnDVersion : 1
 	/// @DnDHash : 374CF7B3
-	/// @DnDComment : Create a new list to hold possible upgrades.
+	/// @DnDComment : // Create a new list to hold possible upgrades.
 	/// @DnDParent : 7C795615
 	/// @DnDArgument : "var" "_upgrade_list"
 	/// @DnDArgument : "var_temp" "1"
@@ -25,7 +25,7 @@ function get_upgrades()
 	/// @DnDAction : YoYo Games.Common.Function_Call
 	/// @DnDVersion : 1
 	/// @DnDHash : 5B37121D
-	/// @DnDComment : Get upgrades for the shooting weapon and place them in the list.
+	/// @DnDComment : // Get upgrades for the shooting weapon and place them in the list.
 	/// @DnDParent : 7C795615
 	/// @DnDArgument : "function" "weapon_shooting_upgrades"
 	/// @DnDArgument : "arg" "_upgrade_list"
@@ -34,7 +34,7 @@ function get_upgrades()
 	/// @DnDAction : YoYo Games.Common.Function_Call
 	/// @DnDVersion : 1
 	/// @DnDHash : 6A968EEB
-	/// @DnDComment : Get upgrades for the swipe weapon and place them in the list.
+	/// @DnDComment : // Get upgrades for the swipe weapon and place them in the list.
 	/// @DnDParent : 7C795615
 	/// @DnDArgument : "function" "weapon_swipe_upgrades"
 	/// @DnDArgument : "arg" "_upgrade_list"
@@ -43,7 +43,7 @@ function get_upgrades()
 	/// @DnDAction : YoYo Games.Common.Function_Call
 	/// @DnDVersion : 1
 	/// @DnDHash : 4EDF6C9F
-	/// @DnDComment : Get upgrades for the trail weapon and place them in the list.
+	/// @DnDComment : // Get upgrades for the trail weapon and place them in the list.
 	/// @DnDParent : 7C795615
 	/// @DnDArgument : "function" "weapon_trail_upgrades"
 	/// @DnDArgument : "arg" "_upgrade_list"
@@ -52,7 +52,7 @@ function get_upgrades()
 	/// @DnDAction : YoYo Games.Common.Function_Call
 	/// @DnDVersion : 1
 	/// @DnDHash : 105331FA
-	/// @DnDComment : Shuffle the list containing all the retrieved upgrades.
+	/// @DnDComment : // Shuffle the list containing all the retrieved upgrades.
 	/// @DnDParent : 7C795615
 	/// @DnDArgument : "function" "list_shuffle"
 	/// @DnDArgument : "arg" "_upgrade_list"
@@ -61,7 +61,7 @@ function get_upgrades()
 	/// @DnDAction : YoYo Games.Data Structures.List_Count
 	/// @DnDVersion : 1
 	/// @DnDHash : 7FDF53D0
-	/// @DnDComment : Get the size of the list, this$(13_10)is how many upgrades are in it.
+	/// @DnDComment : // Get the size of the list, this$(13_10)// is how many upgrades are in it.
 	/// @DnDParent : 7C795615
 	/// @DnDArgument : "assignee" "_size"
 	/// @DnDArgument : "assignee_temp" "1"
@@ -71,7 +71,7 @@ function get_upgrades()
 	/// @DnDAction : YoYo Games.Common.Temp_Variable
 	/// @DnDVersion : 1
 	/// @DnDHash : 3C78885D
-	/// @DnDComment : Define the x position where the first upgrade card$(13_10)will be created.
+	/// @DnDComment : // Define the x position where the first upgrade card$(13_10)// will be created.
 	/// @DnDParent : 7C795615
 	/// @DnDArgument : "var" "_x"
 	/// @DnDArgument : "value" "-400"
@@ -80,7 +80,7 @@ function get_upgrades()
 	/// @DnDAction : YoYo Games.Loops.For_Loop
 	/// @DnDVersion : 1
 	/// @DnDHash : 14382F38
-	/// @DnDComment : For each upgrade in the list,$(13_10)up to a max of 3...
+	/// @DnDComment : // For each upgrade in the list,$(13_10)// up to a max of 3...
 	/// @DnDParent : 7C795615
 	/// @DnDArgument : "init" "_index = 0"
 	/// @DnDArgument : "init_temp" "1"
@@ -90,7 +90,7 @@ function get_upgrades()
 		/// @DnDAction : YoYo Games.Data Structures.List_Get_At
 		/// @DnDVersion : 1
 		/// @DnDHash : 13D5D950
-		/// @DnDComment : Get the upgrade at the current index.
+		/// @DnDComment : // Get the upgrade at the current index.
 		/// @DnDParent : 14382F38
 		/// @DnDArgument : "assignee" "_upgrade_data"
 		/// @DnDArgument : "var" "_upgrade_list"
@@ -100,7 +100,7 @@ function get_upgrades()
 		/// @DnDAction : YoYo Games.Instances.Create_Instance
 		/// @DnDVersion : 1
 		/// @DnDHash : 73881E29
-		/// @DnDComment : Create a new upgrade card object.
+		/// @DnDComment : // Create a new upgrade card object.
 		/// @DnDParent : 14382F38
 		/// @DnDArgument : "xpos" "1920 / 2 + _x"
 		/// @DnDArgument : "ypos" "1080 / 2"
@@ -114,6 +114,7 @@ function get_upgrades()
 		/// @DnDAction : YoYo Games.Common.Variable
 		/// @DnDVersion : 1
 		/// @DnDHash : 24DD75E0
+		/// @DnDComment : // Set the reveal covering life.
 		/// @DnDParent : 14382F38
 		/// @DnDArgument : "expr" "0.5 + 0.25 *_index"
 		/// @DnDArgument : "var" "_upgrade.roll_life"
@@ -122,7 +123,7 @@ function get_upgrades()
 		/// @DnDAction : YoYo Games.Common.Variable
 		/// @DnDVersion : 1
 		/// @DnDHash : 648F7C3F
-		/// @DnDComment : Set the upgrade data to the upgrade card object.
+		/// @DnDComment : // Set the upgrade data to the upgrade card object.
 		/// @DnDParent : 14382F38
 		/// @DnDArgument : "expr" "_upgrade_data"
 		/// @DnDArgument : "var" "_upgrade.upgrade_data"
@@ -131,7 +132,7 @@ function get_upgrades()
 		/// @DnDAction : YoYo Games.Common.Variable
 		/// @DnDVersion : 1
 		/// @DnDHash : 62B9F25C
-		/// @DnDComment : Increment the x position for the next card.
+		/// @DnDComment : // Increment the x position for the next card.
 		/// @DnDParent : 14382F38
 		/// @DnDArgument : "expr" "400"
 		/// @DnDArgument : "expr_relative" "1"

@@ -5,7 +5,8 @@ function unpause()
 	global.paused = false;
 
 	// Apply to all instances.
-	with(all) {
+	with (all) 
+	{
 		// Set speed to saved speed.
 		speed = paused_speed;
 	

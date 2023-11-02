@@ -21,7 +21,7 @@ function weapon_trail_upgrades(_upgrade_list)
 	var _unlocked = ds_map_find_value(global.trail, "unlocked");
 
 	// If it is NOT unlocked...
-	if(!(_unlocked))
+	if (!_unlocked)
 	{
 		// Create map to store upgrade.
 		var _map = ds_map_create();
@@ -37,7 +37,8 @@ function weapon_trail_upgrades(_upgrade_list)
 	
 		// Add upgrade to the list.
 		ds_list_add(_upgrade_list, _map);
-	
+		
+		// Exits the event.
 		exit;
 	}
 
@@ -46,7 +47,7 @@ function weapon_trail_upgrades(_upgrade_list)
 
 	// If attack speed is over 30...
 	// Note this is a cooldown, so higher is slower.
-	if(_attack_speed > 30)
+	if (_attack_speed > 30)
 	{
 		// Create map to store upgrade.
 		var _map = ds_map_create();
@@ -68,7 +69,7 @@ function weapon_trail_upgrades(_upgrade_list)
 	var _damage = ds_map_find_value(global.trail, "damage");
 
 	// If damage is under 5...
-	if(_damage < 5)
+	if (_damage < 5)
 	{
 		// Create map to store upgrade.
 		var _map = ds_map_create();

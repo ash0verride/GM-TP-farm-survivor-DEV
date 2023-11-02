@@ -21,7 +21,7 @@ function weapon_swipe_upgrades(_upgrade_list)
 	var _unlocked = ds_map_find_value(global.swipe, "unlocked");
 
 	// If it is NOT unlocked...
-	if(!(_unlocked))
+	if (!_unlocked)
 	{
 		// Create a map to hold the upgrade.
 		var _map = ds_map_create();
@@ -47,7 +47,7 @@ function weapon_swipe_upgrades(_upgrade_list)
 	var _attack_speed = ds_map_find_value(global.swipe, "attack_speed");
 
 	// If attack speed is over 10...
-	if(_attack_speed > 10)
+	if (_attack_speed > 10)
 	{
 		// Create a map to hold the upgrade.
 		var _map = ds_map_create();
@@ -66,9 +66,11 @@ function weapon_swipe_upgrades(_upgrade_list)
 		ds_list_add(_upgrade_list, _map);
 	}
 
+	// Finds the damage value.
 	var _damage = ds_map_find_value(global.swipe, "damage");
 
-	if(_damage < 5)
+	// Checks if the value is below 5.
+	if (_damage < 5)
 	{
 		// Create a map to hold the upgrade.
 		var _map = ds_map_create();
