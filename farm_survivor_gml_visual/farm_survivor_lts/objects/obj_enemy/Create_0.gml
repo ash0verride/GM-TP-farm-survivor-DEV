@@ -37,3 +37,24 @@ image_yscale = 0.5;
 /// @DnDComment : Create variable to show/hide the healthbar.
 /// @DnDArgument : "var" "show_healthbar"
 show_healthbar = 0;
+
+/// @DnDAction : YoYo Games.Instances.Create_Instance
+/// @DnDVersion : 1
+/// @DnDHash : 77B2F623
+/// @DnDComment : // Create shadow object to follow.
+/// @DnDArgument : "xpos_relative" "1"
+/// @DnDArgument : "ypos_relative" "1"
+/// @DnDArgument : "var" "_shadow"
+/// @DnDArgument : "var_temp" "1"
+/// @DnDArgument : "objectid" "obj_shadows"
+/// @DnDArgument : "layer" ""Shadows""
+/// @DnDSaveInfo : "objectid" "obj_shadows"
+var _shadow = instance_create_layer(x + 0, y + 0, "Shadows", obj_shadows);
+
+/// @DnDAction : YoYo Games.Common.Variable
+/// @DnDVersion : 1
+/// @DnDHash : 2A7280A4
+/// @DnDComment : // Set shadow owner.
+/// @DnDArgument : "expr" "self"
+/// @DnDArgument : "var" "_shadow.owner_object"
+_shadow.owner_object = self;

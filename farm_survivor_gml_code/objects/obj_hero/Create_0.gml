@@ -16,3 +16,8 @@ alarm_set(1, 30);
 
 // Start alarm for the trail weapon.
 alarm_set(2, 30);
+
+// Create shadow object to follow.
+var _shadow = instance_create_layer(x, y, "Shadows", obj_shadow);
+// Set shadow owner.
+_shadow.owner_object = self;

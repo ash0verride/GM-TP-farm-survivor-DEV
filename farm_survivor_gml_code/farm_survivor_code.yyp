@@ -89,6 +89,7 @@
     {"id":{"name":"snd_ui_close","path":"sounds/snd_ui_close/snd_ui_close.yy",},"order":1,},
     {"id":{"name":"spr_bush","path":"sprites/spr_bush/spr_bush.yy",},"order":1,},
     {"id":{"name":"get_upgrades","path":"scripts/get_upgrades/get_upgrades.yy",},"order":5,},
+    {"id":{"name":"obj_shadow","path":"objects/obj_shadow/obj_shadow.yy",},"order":15,},
     {"id":{"name":"fnt_large","path":"fonts/fnt_large/fnt_large.yy",},"order":0,},
     {"id":{"name":"spr_game_over_banner","path":"sprites/spr_game_over_banner/spr_game_over_banner.yy",},"order":15,},
     {"id":{"name":"unpause","path":"scripts/unpause/unpause.yy",},"order":13,},
