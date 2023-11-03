@@ -62,9 +62,9 @@ if(!l7D2E0762_0)
 		/// @DnDVersion : 1
 		/// @DnDHash : 07E98085
 		/// @DnDComment : // Destroy any xp pickups.
-		/// @DnDApplyTo : obj_collectible
+		/// @DnDApplyTo : {obj_collectable}
 		/// @DnDParent : 33EFFF6F
-		with(obj_collectible) instance_destroy();
+		with(obj_collectable) instance_destroy();
 	
 		/// @DnDAction : YoYo Games.Instances.Destroy_Instance
 		/// @DnDVersion : 1
@@ -127,9 +127,9 @@ if(!(instance_exists(obj_upgrade)) && !(instance_exists(obj_template_complete)))
 		/// @DnDVersion : 1
 		/// @DnDHash : 7837CBAF
 		/// @DnDComment : // Destroy any xp pickups.
-		/// @DnDApplyTo : {obj_collectible}
+		/// @DnDApplyTo : {obj_collectable}
 		/// @DnDParent : 6B32F2A6
-		with(obj_collectible) instance_destroy();
+		with(obj_collectable) instance_destroy();
 	
 		/// @DnDAction : YoYo Games.Instances.Destroy_Instance
 		/// @DnDVersion : 1

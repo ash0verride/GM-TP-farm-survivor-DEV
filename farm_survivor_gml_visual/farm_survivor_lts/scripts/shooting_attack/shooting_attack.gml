@@ -1,7 +1,7 @@
 /// @DnDAction : YoYo Games.Common.Function
 /// @DnDVersion : 1
 /// @DnDHash : 1061A679
-/// @DnDComment : // Define a function to execture the shooting attack.
+/// @DnDComment : // Define a function to execute the shooting attack.
 /// @DnDArgument : "funcName" "shooting_attack"
 function shooting_attack() 
 {

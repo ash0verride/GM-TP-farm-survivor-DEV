@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_collectible",
+  "name": "obj_collectable",
   "spriteId": {
     "name": "spr_collectible_gen",
     "path": "sprites/spr_collectible_gen/spr_collectible_gen.yy",

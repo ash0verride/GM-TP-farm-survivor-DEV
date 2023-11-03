@@ -1,4 +1,4 @@
-// Define a function to execture the shooting attack.
+// Define a function to execute the shooting attack.
 function shooting_attack() 
 {
 	// If an enemy is found...
@@ -23,7 +23,7 @@ function shooting_attack()
 			audio_play_sound(_sound, 0, 0, 1.0, undefined, 1.0);
 		
 			// Create a bullet and assign it to temp variable _bullet.
-			var _bullet = instance_create_layer(x + 0, y + 0, "Instances", obj_hero_bullet);
+			var _bullet = instance_create_layer(x, y, "Instances", obj_hero_bullet);
 		
 			// Change values of the bullet...
 			with (_bullet) 

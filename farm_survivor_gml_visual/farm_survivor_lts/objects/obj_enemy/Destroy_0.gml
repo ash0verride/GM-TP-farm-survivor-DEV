@@ -5,17 +5,17 @@
 /// @DnDInput : 10
 /// @DnDArgument : "var" "_drop"
 /// @DnDArgument : "var_temp" "1"
-/// @DnDArgument : "option" "obj_collectible"
-/// @DnDArgument : "option_1" "obj_collectible"
-/// @DnDArgument : "option_2" "obj_collectible"
-/// @DnDArgument : "option_3" "obj_collectible"
-/// @DnDArgument : "option_4" "obj_collectible"
-/// @DnDArgument : "option_5" "obj_collectible"
-/// @DnDArgument : "option_6" "obj_collectible"
-/// @DnDArgument : "option_7" "obj_collectible"
-/// @DnDArgument : "option_8" "obj_collectible"
+/// @DnDArgument : "option" "obj_collectable"
+/// @DnDArgument : "option_1" "obj_collectable"
+/// @DnDArgument : "option_2" "obj_collectable"
+/// @DnDArgument : "option_3" "obj_collectable"
+/// @DnDArgument : "option_4" "obj_collectable"
+/// @DnDArgument : "option_5" "obj_collectable"
+/// @DnDArgument : "option_6" "obj_collectable"
+/// @DnDArgument : "option_7" "obj_collectable"
+/// @DnDArgument : "option_8" "obj_collectable"
 /// @DnDArgument : "option_9" "obj_heart"
-var _drop = choose(obj_collectible, obj_collectible, obj_collectible, obj_collectible, obj_collectible, obj_collectible, obj_collectible, obj_collectible, obj_collectible, obj_heart);
+var _drop = choose(obj_collectable, obj_collectable, obj_collectable, obj_collectable, obj_collectable, obj_collectable, obj_collectable, obj_collectable, obj_collectable, obj_heart);
 
 /// @DnDAction : YoYo Games.Instances.Create_Instance
 /// @DnDVersion : 1

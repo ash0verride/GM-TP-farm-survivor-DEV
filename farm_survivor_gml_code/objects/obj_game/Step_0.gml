@@ -22,7 +22,7 @@ if (!instance_exists(obj_game_over))
 		with (obj_enemy) instance_destroy();
 	
 		// Destroy any xp pickups.
-		with (obj_collectible) instance_destroy();
+		with (obj_collectable) instance_destroy();
 	
 		// Destroy any health pickups.
 		with (obj_heart) instance_destroy();
@@ -46,7 +46,7 @@ if (!instance_exists(obj_upgrade) && !instance_exists(obj_template_complete))
 		with (obj_hero_bullet) instance_destroy();
 	
 		// Destroy any xp pickups.
-		with (obj_collectible) instance_destroy();
+		with (obj_collectable) instance_destroy();
 	
 		// Destroy any health pickups.
 		with (obj_heart) instance_destroy();
