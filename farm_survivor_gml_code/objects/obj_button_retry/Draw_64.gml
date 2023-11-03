@@ -12,5 +12,5 @@ draw_set_valign(fa_middle);
 draw_set_colour(c_black);
 draw_set_alpha(1);
 
-// Draw rety text.
-draw_text(x + 0, y + 20, string("RETRY") + "");
+// Draw retry text.
+draw_text_transformed(x, y + 20, "RETRY", image_xscale, image_yscale, image_angle);

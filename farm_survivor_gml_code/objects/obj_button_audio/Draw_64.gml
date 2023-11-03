@@ -5,4 +5,4 @@ image_index = audio_get_master_gain(0) > 0;
 draw_self();
 
 // Draw the little speaker icon.
-draw_sprite(spr_sound_button, image_index, x + 0, y + 0);
+draw_sprite_ext(spr_sound_button, image_index, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);

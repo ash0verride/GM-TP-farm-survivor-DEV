@@ -13,3 +13,8 @@ image_yscale = 0.5;
 
 // Create variable to show/hide the healthbar.
 show_healthbar = 0;
+
+// Create shadow object to follow.
+var _shadow = instance_create_layer(x, y, "Shadows", obj_shadow);
+// Set shadow owner.
+_shadow.owner_object = self;

@@ -12,5 +12,5 @@ draw_set_valign(fa_middle);
 draw_set_colour(c_black);
 draw_set_alpha(1);
 
-// Draw resumt title text.
-draw_text(x + 0, y + 20, string("RESUME") + "");
+// Draw resume title text.
+draw_text_transformed(x, y + 20, "RESUME", image_xscale, image_yscale, image_angle);

@@ -1,6 +1,7 @@
 /// @DnDAction : YoYo Games.Drawing.Draw_Sprite_Transformed
 /// @DnDVersion : 1
 /// @DnDHash : 30D96EBD
+/// @DnDComment : // Draws the sprite with offset values.
 /// @DnDArgument : "x_relative" "1"
 /// @DnDArgument : "y" "-40"
 /// @DnDArgument : "y_relative" "1"

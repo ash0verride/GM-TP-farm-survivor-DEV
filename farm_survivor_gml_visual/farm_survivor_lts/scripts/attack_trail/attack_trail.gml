@@ -1,14 +1,14 @@
 /// @DnDAction : YoYo Games.Common.Function
 /// @DnDVersion : 1
 /// @DnDHash : 1061A679
-/// @DnDComment : Define function to execute trail attack.
+/// @DnDComment : // Define function to execute trail attack.
 /// @DnDArgument : "funcName" "attack_trail"
 function attack_trail() 
 {
 	/// @DnDAction : YoYo Games.Common.If_Expression
 	/// @DnDVersion : 1
 	/// @DnDHash : 0177191C
-	/// @DnDComment : If there is an enemy found...
+	/// @DnDComment : // If there is an enemy found...
 	/// @DnDParent : 1061A679
 	/// @DnDArgument : "expr" "nearest_enemy"
 	if(nearest_enemy)
@@ -16,7 +16,7 @@ function attack_trail()
 		/// @DnDAction : YoYo Games.Audio.Play_Audio
 		/// @DnDVersion : 1.1
 		/// @DnDHash : 0E3E2F5C
-		/// @DnDComment : Play sound effect.
+		/// @DnDComment : // Play sound effect.
 		/// @DnDParent : 0177191C
 		/// @DnDArgument : "soundid" "snd_attack_chimes_2"
 		/// @DnDArgument : "gain" "1"
@@ -26,7 +26,7 @@ function attack_trail()
 		/// @DnDAction : YoYo Games.Instances.Create_Instance
 		/// @DnDVersion : 1
 		/// @DnDHash : 6EC23A9E
-		/// @DnDComment : Create trail attack object.
+		/// @DnDComment : // Create trail attack object.
 		/// @DnDParent : 0177191C
 		/// @DnDArgument : "xpos_relative" "1"
 		/// @DnDArgument : "ypos_relative" "1"

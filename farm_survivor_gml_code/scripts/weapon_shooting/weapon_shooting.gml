@@ -23,7 +23,7 @@ function weapon_shooting_upgrades(_upgrade_list)
 	var _unlocked = ds_map_find_value(global.shooting, "unlocked");
 
 	// If the shooting weapon is NOT unlocked...
-	if(!(_unlocked))
+	if (!_unlocked)
 	{
 		// Create map to strore the upgrade.
 		var _map = ds_map_create();
@@ -40,6 +40,7 @@ function weapon_shooting_upgrades(_upgrade_list)
 		// Add upgrade to list.
 		ds_list_add(_upgrade_list, _map);
 	
+		// Exits the event.
 		exit;
 	}
 
@@ -47,7 +48,7 @@ function weapon_shooting_upgrades(_upgrade_list)
 	var _attack_speed = ds_map_find_value(global.shooting, "attack_speed");
 
 	// If attack speed is over 5...
-	if(_attack_speed > 5)
+	if (_attack_speed > 5)
 	{
 		// Create map to strore the upgrade.
 		var _map = ds_map_create();
@@ -69,7 +70,7 @@ function weapon_shooting_upgrades(_upgrade_list)
 	var _number_of_shots = ds_map_find_value(global.shooting, "number_of_shots");
 
 	// If the number of shots is under 7...
-	if(_number_of_shots < 7)
+	if (_number_of_shots < 7)
 	{
 		// Create map to strore the upgrade.
 		var _map = ds_map_create();
@@ -92,7 +93,7 @@ function weapon_shooting_upgrades(_upgrade_list)
 	var _damage = ds_map_find_value(global.shooting, "damage");
 
 	// If damage is under 4...
-	if(_damage < 4)
+	if (_damage < 4)
 	{
 		// Create map to strore the upgrade.
 		var _map = ds_map_create();

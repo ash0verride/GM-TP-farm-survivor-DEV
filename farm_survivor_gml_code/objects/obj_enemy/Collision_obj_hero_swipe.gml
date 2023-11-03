@@ -1,6 +1,6 @@
 // If our hitpoints is over 0,
 // AND we are not currently being hit.
-if(hitpoints > 0 && sprite_index != hit_sprite)
+if (hitpoints > 0 && sprite_index != hit_sprite)
 {
 	// Choose a random hit sound effect.
 	_sound = choose(snd_melee_hit_1, snd_melee_hit_2, snd_melee_hit_3);
@@ -12,7 +12,7 @@ if(hitpoints > 0 && sprite_index != hit_sprite)
 	show_healthbar = 60;
 
 	// Reduce hitpoints by the damaged caused by the swipe weapon.
-	hitpoints += -global.swipe[? "damage"];
+	hitpoints -= global.swipe[? "damage"];
 
 	// Create text popup to indicate damage.
 	var _text = instance_create_layer(x + 0, y + 0, "UpgradeScreen", obj_text_popup);
@@ -25,7 +25,7 @@ if(hitpoints > 0 && sprite_index != hit_sprite)
 	image_index = 0;
 
 	// If hitpoints has reached zero...
-	if(hitpoints <= 0)
+	if (hitpoints <= 0)
 	{
 		// Destroy this instance.
 		instance_destroy();

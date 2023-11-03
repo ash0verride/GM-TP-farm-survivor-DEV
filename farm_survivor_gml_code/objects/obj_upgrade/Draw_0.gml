@@ -1,1 +1,2 @@
+// Exits event.
 exit;

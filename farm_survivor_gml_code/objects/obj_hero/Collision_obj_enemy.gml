@@ -1,23 +1,30 @@
 // If the hero is NOT currently being hit...
-if(!(sprite_index == spr_hero_hit))
+if (sprite_index != spr_hero_hit)
 {
 	// Reduce hitpoints.
-	hitpoints += -1;
+	hitpoints -= 1;
 
 	// Create a text popup.
-	var _text = instance_create_layer(x + 0, y + 0, "UpgradeScreen", obj_text_popup);
-
+	var _text = instance_create_layer(x, y, "UpgradeScreen", obj_text_popup);
+	// Set text for popup.
 	_text.text = 1;
-
+	// Set colour for popup.
 	_text.color = c_red;
-
+	
+	// Change sprite index to hit.
 	sprite_index = spr_hero_hit;
+	// Reset image index.
 	image_index = 0;
-
-	with(other) {
-		if(sprite_index == spr_pigun_walk)
+	
+	// With the enemy...
+	with (other) 
+	{
+		// Check if enemy is walking pigun.
+		if (sprite_index == spr_pigun_walk)
 		{
+			// Change to attack sprite.
 			sprite_index = attack_sprite;
+			// Reset image index.
 			image_index = 0;
 		}
 	}

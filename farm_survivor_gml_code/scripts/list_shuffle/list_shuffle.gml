@@ -1,5 +1,6 @@
-// Hangover from the Visual version...
-function list_shuffle(_lsit) 
+// Function from the Visual version...
+function list_shuffle(_list) 
 {
-	ds_list_shuffle(_lsit);
+	// Shuffle list.
+	ds_list_shuffle(_list);
 }

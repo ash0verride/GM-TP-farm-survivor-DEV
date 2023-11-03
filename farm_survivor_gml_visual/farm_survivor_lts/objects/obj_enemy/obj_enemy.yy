@@ -31,7 +31,6 @@
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":true,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"obj_hero_swipe","path":"objects/obj_hero_swipe/obj_hero_swipe.yy",},},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":true,"eventNum":73,"eventType":8,"collisionObjectId":null,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":true,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"obj_hero_trail","path":"objects/obj_hero_trail/obj_hero_trail.yy",},},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":true,"eventNum":0,"eventType":8,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],

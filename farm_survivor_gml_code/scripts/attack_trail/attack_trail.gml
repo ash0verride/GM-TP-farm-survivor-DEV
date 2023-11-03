@@ -2,12 +2,12 @@
 function attack_trail() 
 {
 	// If there is an enemy found...
-	if(nearest_enemy)
+	if (nearest_enemy)
 	{
 		// Play sound effect.
 		audio_play_sound(snd_attack_chimes_2, 0, 0, 1, undefined, 1.0);
 	
 		// Create trail attack object.
-		instance_create_layer(x + 0, y + 0, "Instances", obj_hero_trail);
+		instance_create_layer(x, y, "Instances", obj_hero_trail);
 	}
 }
