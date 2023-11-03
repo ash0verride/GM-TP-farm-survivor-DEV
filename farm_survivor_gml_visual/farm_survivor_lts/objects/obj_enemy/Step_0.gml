@@ -1,7 +1,7 @@
 /// @DnDAction : YoYo Games.Common.Variable
 /// @DnDVersion : 1
 /// @DnDHash : 648EDC10
-/// @DnDComment : // Set death to negative y.$(13_10)$(13_10)// This will cause instances to draw from$(13_10)// top to bottom.
+/// @DnDComment : // Set depth to negative y.$(13_10)$(13_10)// This will cause instances to draw from$(13_10)// top to bottom.
 /// @DnDArgument : "expr" "-y"
 /// @DnDArgument : "var" "depth"
 depth = -y;
