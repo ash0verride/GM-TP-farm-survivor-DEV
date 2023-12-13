@@ -1,20 +1,3 @@
-/// @DnDAction : YoYo Games.Common.If_Expression
-/// @DnDVersion : 1
-/// @DnDHash : 5AF18AC1
-/// @DnDComment : // If the game is currently paused...
-/// @DnDArgument : "expr" "global.paused"
-if(global.paused)
-{
-	/// @DnDAction : YoYo Games.Instances.Set_Alarm
-	/// @DnDVersion : 1
-	/// @DnDHash : 4547E5E2
-	/// @DnDComment : // Increment alarm 0 to stop it triggering$(13_10)// while paused.
-	/// @DnDParent : 5AF18AC1
-	/// @DnDArgument : "steps" "1"
-	/// @DnDArgument : "steps_relative" "1"
-	alarm_set(0, 1 + alarm_get(0));
-}
-
 /// @DnDAction : YoYo Games.Instances.If_Instance_Exists
 /// @DnDVersion : 1
 /// @DnDHash : 7D2E0762
@@ -193,5 +176,42 @@ if(!(instance_exists(obj_upgrade)) && !(instance_exists(obj_template_complete)))
 			/// @DnDSaveInfo : "objectid" "obj_upgrade_screen"
 			instance_create_layer(0, 0, "Instances", obj_upgrade_screen);
 		}
+	}
+}
+
+/// @DnDAction : YoYo Games.Common.If_Expression
+/// @DnDVersion : 1
+/// @DnDHash : 78012815
+/// @DnDComment : // If the game is not currently paused...
+/// @DnDArgument : "expr" "global.paused"
+/// @DnDArgument : "not" "1"
+if(!(global.paused))
+{
+	/// @DnDAction : YoYo Games.Common.Variable
+	/// @DnDVersion : 1
+	/// @DnDHash : 0A35378A
+	/// @DnDComment : // Reduce spawner cooldown timer.
+	/// @DnDParent : 78012815
+	/// @DnDArgument : "expr" "-delta_time * 0.000001"
+	/// @DnDArgument : "expr_relative" "1"
+	/// @DnDArgument : "var" "spawn_enemy_cooldown"
+	spawn_enemy_cooldown += -delta_time * 0.000001;
+
+	/// @DnDAction : YoYo Games.Common.If_Variable
+	/// @DnDVersion : 1
+	/// @DnDHash : 2229766E
+	/// @DnDComment : // Checks if spawner has expired.
+	/// @DnDParent : 78012815
+	/// @DnDArgument : "var" "spawn_enemy_cooldown"
+	/// @DnDArgument : "op" "3"
+	if(spawn_enemy_cooldown <= 0)
+	{
+		/// @DnDAction : YoYo Games.Common.Function_Call
+		/// @DnDVersion : 1
+		/// @DnDHash : 4434B615
+		/// @DnDComment : // Calls spawn enemy function.
+		/// @DnDParent : 2229766E
+		/// @DnDArgument : "function" "spawn_enemy"
+		spawn_enemy();
 	}
 }
