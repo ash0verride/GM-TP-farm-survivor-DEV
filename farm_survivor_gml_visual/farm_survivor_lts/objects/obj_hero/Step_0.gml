@@ -5,24 +5,6 @@
 /// @DnDArgument : "expr" "global.paused"
 if(global.paused)
 {
-	/// @DnDAction : YoYo Games.Instances.Set_Alarm
-	/// @DnDVersion : 1
-	/// @DnDHash : 42F2706D
-	/// @DnDComment : // Increment our weapon cooldown timers$(13_10)// so that they don't trigger while we're$(13_10)// paused.
-	/// @DnDInput : 3
-	/// @DnDParent : 565A358A
-	/// @DnDArgument : "steps" "1"
-	/// @DnDArgument : "steps_relative" "1"
-	/// @DnDArgument : "steps_1" "1"
-	/// @DnDArgument : "steps_relative_1" "1"
-	/// @DnDArgument : "steps_2" "1"
-	/// @DnDArgument : "steps_relative_2" "1"
-	/// @DnDArgument : "alarm_1" "1"
-	/// @DnDArgument : "alarm_2" "2"
-	alarm_set(0, 1 + alarm_get(0));
-	alarm_set(1, 1 + alarm_get(1));
-	alarm_set(2, 1 + alarm_get(2));
-
 	/// @DnDAction : YoYo Games.Common.Exit_Event
 	/// @DnDVersion : 1
 	/// @DnDHash : 5BA6C54A
@@ -37,24 +19,6 @@ if(global.paused)
 /// @DnDArgument : "expr" "instance_exists(obj_upgrade) || instance_exists(obj_template_complete) || instance_exists(obj_game_over)"
 if(instance_exists(obj_upgrade) || instance_exists(obj_template_complete) || instance_exists(obj_game_over))
 {
-	/// @DnDAction : YoYo Games.Instances.Set_Alarm
-	/// @DnDVersion : 1
-	/// @DnDHash : 6F50798C
-	/// @DnDComment : // Increment our weapon cooldown timers$(13_10)// so that they don't trigger while we're$(13_10)// paused.
-	/// @DnDInput : 3
-	/// @DnDParent : 2D9E0552
-	/// @DnDArgument : "steps" "1"
-	/// @DnDArgument : "steps_relative" "1"
-	/// @DnDArgument : "steps_1" "1"
-	/// @DnDArgument : "steps_relative_1" "1"
-	/// @DnDArgument : "steps_2" "1"
-	/// @DnDArgument : "steps_relative_2" "1"
-	/// @DnDArgument : "alarm_1" "1"
-	/// @DnDArgument : "alarm_2" "2"
-	alarm_set(0, 1 + alarm_get(0));
-	alarm_set(1, 1 + alarm_get(1));
-	alarm_set(2, 1 + alarm_get(2));
-
 	/// @DnDAction : YoYo Games.Movement.Set_Speed
 	/// @DnDVersion : 1
 	/// @DnDHash : 0BE9F742
@@ -119,4 +83,73 @@ if(nearest_enemy)
 	/// @DnDArgument : "expr" "point_distance(x, y, nearest_enemy.x, nearest_enemy.y)"
 	/// @DnDArgument : "var" "nearest_distance"
 	nearest_distance = point_distance(x, y, nearest_enemy.x, nearest_enemy.y);
+}
+
+/// @DnDAction : YoYo Games.Common.Variable
+/// @DnDVersion : 1
+/// @DnDHash : 023FC4C7
+/// @DnDComment : // Cooldowns for the weapon attacks (from frames to seconds).
+/// @DnDInput : 3
+/// @DnDArgument : "expr" "-delta_time * 0.000001"
+/// @DnDArgument : "expr_relative" "1"
+/// @DnDArgument : "expr_1" "-delta_time * 0.000001"
+/// @DnDArgument : "expr_relative_1" "1"
+/// @DnDArgument : "expr_2" "-delta_time * 0.000001"
+/// @DnDArgument : "expr_relative_2" "1"
+/// @DnDArgument : "var" "hero_shoot_cooldown"
+/// @DnDArgument : "var_1" "hero_swipe_cooldown"
+/// @DnDArgument : "var_2" "hero_trail_cooldown"
+hero_shoot_cooldown += -delta_time * 0.000001;
+hero_swipe_cooldown += -delta_time * 0.000001;
+hero_trail_cooldown += -delta_time * 0.000001;
+
+/// @DnDAction : YoYo Games.Common.If_Variable
+/// @DnDVersion : 1
+/// @DnDHash : 38B830B3
+/// @DnDComment : // Check if function cooldown is finished.
+/// @DnDArgument : "var" "hero_shoot_cooldown"
+/// @DnDArgument : "op" "3"
+if(hero_shoot_cooldown <= 0)
+{
+	/// @DnDAction : YoYo Games.Common.Function_Call
+	/// @DnDVersion : 1
+	/// @DnDHash : 4F966227
+	/// @DnDComment : // Call function.
+	/// @DnDParent : 38B830B3
+	/// @DnDArgument : "function" "hero_shoot"
+	hero_shoot();
+}
+
+/// @DnDAction : YoYo Games.Common.If_Variable
+/// @DnDVersion : 1
+/// @DnDHash : 71B257C5
+/// @DnDComment : // Check if function cooldown is finished.
+/// @DnDArgument : "var" "hero_swipe_cooldown"
+/// @DnDArgument : "op" "3"
+if(hero_swipe_cooldown <= 0)
+{
+	/// @DnDAction : YoYo Games.Common.Function_Call
+	/// @DnDVersion : 1
+	/// @DnDHash : 5079F9C7
+	/// @DnDComment : // Call function.
+	/// @DnDParent : 71B257C5
+	/// @DnDArgument : "function" "hero_swipe"
+	hero_swipe();
+}
+
+/// @DnDAction : YoYo Games.Common.If_Variable
+/// @DnDVersion : 1
+/// @DnDHash : 45938D75
+/// @DnDComment : // Check if function cooldown is finished.
+/// @DnDArgument : "var" "hero_trail_cooldown"
+/// @DnDArgument : "op" "3"
+if(hero_trail_cooldown <= 0)
+{
+	/// @DnDAction : YoYo Games.Common.Function_Call
+	/// @DnDVersion : 1
+	/// @DnDHash : 0FA3125A
+	/// @DnDComment : // Call function.
+	/// @DnDParent : 45938D75
+	/// @DnDArgument : "function" "hero_trail"
+	hero_trail();
 }
