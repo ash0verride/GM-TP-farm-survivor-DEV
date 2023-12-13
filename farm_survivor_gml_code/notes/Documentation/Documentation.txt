@@ -10,10 +10,10 @@ Game
 	obj_game
 		Main game loop object for gameplay called in the instances layer or the game room.
 		
-		Create		Create the main game music on loop, sets up the xp and level variables, sets up the alarm handling enemy spawning and creates a new button for pausing.
+		Create		Create the main game music on loop, sets up the xp and level variables, sets up the function handling enemy spawning and creates a new button for pausing.
+			- spawn_enemy()			Resets the cooldown and chooses and enemy to spawn based on the level at a random direction 1200 pixels away from the player so they appear off screen.
 		Clean Up	Stops all audio.
-		Step		Pushes the enemy spawning alarm when paused otherwise check the player hasn't ran out of hitpoints ending the game if they have, otherwise it checks the players xp and if they have met the threshold pushes them into the next upgrade screen or complete screen.
-		Alarm 0		Resets the alarm and chooses and enemy to spawn based on the level at a random direction 1200 pixels away from the player so they appear off screen.
+		Step		Checks the player hasn't ran out of hitpoints ending the game if they have, otherwise it checks the players xp and if they have met the threshold pushes them into the next upgrade screen or complete screen.
 		Draw GUI	Draws the XP hud at the top of the screen when not in game over or upgrade screens.
 		
 	obj_shadow
@@ -90,11 +90,11 @@ Game
 			obj_hero
 				Object used for the main player character.
 				
-				Create					Sets up players health and inital attack alarms as well as creating the heros shadow object.
-				Step					Updates the attack alarms so they dont trigger while game is pased or in menus. Then updates the players movements, restricts them to the room and sets their nearest enemy.
-				Alarm 0					Attack logic for shooting, will shoot when enemy is in range and reset alarm to attack speed, otherwise test again later on next frame.
-				Alarm 1					Attack logic for swipping, will swipe when enemy is very near and reset alarm to attack speed, otherwise test again later on next frame.
-				Alarm 2					Attack logic for trail weapon, will attack with trail weapon when enemies are close to player and then reset attack speed, otherwise will test again in next frame.
+				Create					Sets up players health and inital attack functions as well as creating the heros shadow object.
+						- hero_shoot()			Attack logic for shooting, will shoot when enemy is in range and reset cooldown to attack speed, otherwise test again later on next frame.
+						- hero_swipe()			Attack logic for swipping, will swipe when enemy is very near and reset cooldown to attack speed, otherwise test again later on next frame.
+						- hero_trail()			Attack logic for trail weapon, will attack with trail weapon when enemies are close to player and then reset attack speed, otherwise will test again in next frame.
+				Step					Updates the players movements, restricts them to the room and sets their nearest enemy, also calls the players attacks when needed.
 				Draw End				Draws the players back and front health bars based on the offsets to the players position as well as its current health.
 				Draw GUI				Draws the vitual joystick on screen when player is not in pause screen or menu for mouse based movement.
 				-><- obj_collectable	Adds experience points and plays sound effect before destroying the pickup collected.
