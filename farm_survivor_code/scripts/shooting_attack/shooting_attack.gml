@@ -19,6 +19,7 @@ function shooting_attack()
 		// Repeat the following code for each bullet we need to spawn.
 		repeat (global.shooting[? "number_of_shots"])
 		{
+			// Check if sound effect is already playing
 			if (!audio_is_playing(_sound))
 			{
 			// Choose a random sound effect.
